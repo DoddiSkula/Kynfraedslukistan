@@ -9,7 +9,6 @@ import { CMS_NAME } from "../lib/constants";
 import PostHeader from "./post-header";
 import PostBody from "./post-body";
 import SectionSeparator from "./section-separator";
-import MoreStories from "./more-stories";
 
 export default function Post({ data = {}, preview = false }) {
   const router = useRouter();
@@ -54,7 +53,6 @@ export default function Post({ data = {}, preview = false }) {
               <PostBody content={post.content} />
             </article>
             <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
           </>
         )}
       </Container>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "./container";
 
@@ -19,13 +20,13 @@ export default function Navbar() {
                 className="block h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
               </svg>
@@ -34,13 +35,13 @@ export default function Navbar() {
                 className="hidden h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
@@ -48,26 +49,30 @@ export default function Navbar() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <img
-                className="block h-8 w-auto lg:hidden"
+              <Image
+                className="block w-auto lg:hidden"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                 alt="Your Company"
+                height={32}
+                width={32}
               />
-              <img
+              <Image
                 className="hidden h-8 w-auto lg:block"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                 alt="Your Company"
+                height={32}
+                width={32}
               />
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-2">
-                <a
-                  href="#"
+                <Link
+                  href="/kennsluefni"
                   className="text-gray-400 hover:bg-gray-100 hover:text-black rounded-md px-5 py-3 text-sm font-medium"
                   aria-current="page"
                 >
                   Kennsluefni
-                </a>
+                </Link>
 
                 <a
                   href="#"

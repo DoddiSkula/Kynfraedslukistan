@@ -1,9 +1,10 @@
+import Image from "next/image";
 import Container from "./container";
 
 export default function Intro() {
   return (
     <Container>
-      <section className="">
+      <section className="h-screen">
         <div className="grid max-w-screen-xl py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
             <h1 className="text-6xl font-bold mb-10">Kynfræðslukennsla</h1>
@@ -13,93 +14,116 @@ export default function Intro() {
               massa a facilisis.
             </p>
           </div>
-          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex h-72">
-            <img src="/images/hero-img.svg" alt="hero" />
+          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <Image
+              src="/images/hero-img.svg"
+              alt="hero"
+              width={400}
+              height={300}
+            />
           </div>
         </div>
-        <div className="container py-14 mx-auto flex flex-wrap">
-          <div className="flex flex-wrap -m-4">
-            <div className="p-4 lg:w-1/2 md:w-full">
-              <div className="flex border-2 rounded-xl border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col cursor-pointer  bg-white hover:shadow-lg hover:border-primary hover:-translate-y-2 transition-all">
-                <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-primary bg-opacity-5 text-primary flex-shrink-0">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    className="w-8 h-8"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                  </svg>
-                </div>
-                <div className="flex-grow">
-                  <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
+        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-3 xl:gap-6">
+            <a
+              className="group flex gap-y-6 w-full h-full hover:bg-gray-100 rounded-lg p-5 transition-all"
+              href="#"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="flex-shrink-0 w-8 h-8 text-slate-600 mt-0.5 mr-6 "
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                />
+              </svg>
+
+              <div>
+                <div>
+                  <h3 className="block font-semibold text-lg text-black mb-1">
                     Kennsluefni
-                  </h2>
-                  <p className="leading-relaxed text-base">
-                    Blue bottle crucifix vinyl post-ironic four dollar toast
-                    vegan taxidermy. Gastropub indxgo juice poutine.
+                  </h3>
+                  <p className="text-gray-600 ">
+                    The simplest way to keep your portfolio always up-to-date.
                   </p>
-                  <a className="mt-3 text-primary inline-flex items-center">
-                    Allt kennsluefni
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      className="w-4 h-4 ml-2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
                 </div>
-              </div>
-            </div>
-            <div className="p-4 lg:w-1/2 md:w-full">
-              <div className="flex border-2 rounded-xl border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col  cursor-pointer  bg-white hover:shadow-lg hover:border-secondary hover:-translate-y-2 transition-all">
-                <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-secondary bg-opacity-5 text-secondary flex-shrink-0">
+
+                <p className="mt-3 inline-flex items-center gap-x-2 text-sm font-semibold text-gray-800">
+                  Skoða kennsluefni
                   <svg
+                    className="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
                     fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    className="w-10 h-10"
-                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
+                      fill="currentColor"
+                    />
                   </svg>
-                </div>
-                <div className="flex-grow">
-                  <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                    Verkefni
-                  </h2>
-                  <p className="leading-relaxed text-base">
-                    Blue bottle crucifix vinyl post-ironic four dollar toast
-                    vegan taxidermy. Gastropub indxgo juice poutine.
-                  </p>
-                  <a className="mt-3 text-secondary inline-flex items-center">
-                    Öll verkefni
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      className="w-4 h-4 ml-2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
-                </div>
+                </p>
               </div>
-            </div>
+            </a>
+
+            <a
+              className="group flex gap-y-6 w-full h-full hover:bg-gray-100 rounded-lg p-5 transition-all "
+              href="#"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="flex-shrink-0 w-8 h-8 text-slate-600 mt-0.5 mr-6 "
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                />
+              </svg>
+
+              <div>
+                <div>
+                  <h3 className="block font-semibold text-lg text-black mb-1">
+                    Verkefni
+                  </h3>
+                  <p className="text-gray-600 ">
+                    New design projects delivered to your inbox each morning.
+                  </p>
+                </div>
+
+                <p className="mt-3 inline-flex items-center gap-x-2 text-sm font-semibold text-gray-800 ">
+                  Skoða verkefni
+                  <svg
+                    className="w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
