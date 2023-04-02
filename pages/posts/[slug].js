@@ -23,7 +23,7 @@ export default function PostPage({ preview, data }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const { post, morePosts } = await getClient(preview).fetch(postQuery, {
+  const { kennsluefni } = await getClient(preview).fetch(postQuery, {
     slug: params.slug,
   });
 
@@ -31,8 +31,7 @@ export async function getStaticProps({ params, preview = false }) {
     props: {
       preview,
       data: {
-        post,
-        morePosts: overlayDrafts(morePosts),
+        kennsluefni,
       },
     },
     // If webhooks isn't setup then attempt to re-generate in 1 minute intervals

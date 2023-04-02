@@ -13,8 +13,8 @@ import SectionSeparator from "../section-separator";
 export default function Post({ data = {}, preview = false }) {
   const router = useRouter();
 
-  const { post, morePosts } = data;
-  const slug = post?.slug;
+  const { kennsluefni } = data;
+  const slug = kennsluefni?.slug;
 
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />;
@@ -30,13 +30,13 @@ export default function Post({ data = {}, preview = false }) {
             <article>
               <Head>
                 <title>
-                  {`${post.title} | Next.js Blog Example with ${CMS_NAME}`}
+                  {`${kennsluefni.title} | Next.js Blog Example with ${CMS_NAME}`}
                 </title>
-                {post.coverImage?.asset?._ref && (
+                {kennsluefni.image?.asset?._ref && (
                   <meta
                     key="ogImage"
                     property="og:image"
-                    content={urlForImage(post.coverImage)
+                    content={urlForImage(kennsluefni.image)
                       .width(1200)
                       .height(627)
                       .fit("crop")
@@ -45,12 +45,10 @@ export default function Post({ data = {}, preview = false }) {
                 )}
               </Head>
               <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
+                title={kennsluefni.title}
+                coverImage={kennsluefni.image}
               />
-              <PostBody content={post.content} />
+              <PostBody content={kennsluefni.instructions} />
             </article>
             <SectionSeparator />
           </>

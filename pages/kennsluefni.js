@@ -14,10 +14,17 @@ export default function KennsluefniPage({ allPosts, preview }) {
       </Head>
       <div className="h-screen bg-gradient-to-b from-white to-sky-50">
         <Container>
-          <h1>Kennsluefni</h1>
-          {allPosts.map((post, index) => (
-            <PostPlug key={index} title={post.title} slug={post.slug} />
-          ))}
+          <div className="my-20 grid grid-cols-3">
+            {allPosts.map((post, index) => (
+              <PostPlug
+                key={index}
+                title={post.title}
+                slug={post.slug}
+                desc={post.description}
+                image={post.image}
+              />
+            ))}
+          </div>
         </Container>
       </div>
     </Layout>
