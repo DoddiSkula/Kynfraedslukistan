@@ -1,24 +1,29 @@
 import { indexQuery } from "../lib/queries";
 import { getClient, overlayDrafts } from "../lib/sanity.server";
+import { PreviewSuspense } from "next-sanity/preview";
+import { lazy } from "react";
 import Layout from "../components/layout";
 import Head from "next/head";
 import { WEBSITE_NAME } from "../lib/constants";
-import Container from "../components/container";
-import PostPlug from "../components/Post/post-plug";
 
-export default function KennsluefniPage({ allPosts, preview }) {
+const LandingPreview = lazy(() => import("../components/landing-preview"));
+
+export default function VerkefniPage({ allPosts, preview }) {
+  if (preview) {
+    return (
+      <PreviewSuspense fallback="Loading...">
+        <LandingPreview allPosts={allPosts} />
+      </PreviewSuspense>
+    );
+  }
+
   return (
     <Layout>
       <Head>
         <title>{`Kennsluefni - ${WEBSITE_NAME}`}</title>
       </Head>
       <div className="h-screen bg-gradient-to-b from-white to-sky-50">
-        <Container>
-          <h1>Kennsluefni</h1>
-          {allPosts.map((post, index) => (
-            <PostPlug key={index} title={post.title} slug={post.slug} />
-          ))}
-        </Container>
+        <h1>Verkefni</h1>
       </div>
     </Layout>
   );

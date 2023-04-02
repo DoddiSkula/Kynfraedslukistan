@@ -1,8 +1,28 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import Container from "./container";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
+  const router = useRouter();
+  const currentRoute = router.pathname;
+
+  const NavItem = ({ label, route }) => {
+    return (
+      <Link
+        href={route}
+        className={`hover:bg-primary hover:bg-opacity-5 hover:text-primary rounded-md px-5 py-3 text-sm font-medium ${
+          currentRoute === route
+            ? "bg-primary text-primary bg-opacity-5"
+            : "text-gray-400"
+        }`}
+        aria-current="page"
+      >
+        {label}
+      </Link>
+    );
+  };
+
   return (
     <nav className="bg-white sticky top-0 z-10">
       <Container>
@@ -49,49 +69,29 @@ export default function Navbar() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <Image
-                className="block w-auto lg:hidden"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                alt="Your Company"
-                height={32}
-                width={32}
-              />
-              <Image
-                className="hidden h-8 w-auto lg:block"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                alt="Your Company"
-                height={32}
-                width={32}
-              />
+              <Link href="/" aria-current="page">
+                <img
+                  className="block w-auto lg:hidden"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  alt="Your Company"
+                  height={32}
+                  width={32}
+                />
+
+                <img
+                  className="hidden h-8 w-auto lg:block"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  alt="Your Company"
+                  height={32}
+                  width={32}
+                />
+              </Link>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-2">
-                <Link
-                  href="/kennsluefni"
-                  className="text-gray-400 hover:bg-gray-100 hover:text-black rounded-md px-5 py-3 text-sm font-medium"
-                  aria-current="page"
-                >
-                  Kennsluefni
-                </Link>
-
-                <a
-                  href="#"
-                  className="text-gray-400 hover:bg-gray-100 hover:text-black rounded-md px-5 py-3 text-sm font-medium"
-                >
-                  Verkefni
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:bg-gray-100 hover:text-black rounded-md px-5 py-3 text-sm font-medium"
-                >
-                  Algengar spurningar
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:bg-gray-100 hover:text-black rounded-md px-5 py-3 text-sm font-medium"
-                >
-                  Um vefinn
-                </a>
+                <NavItem label={"Kennsluefni"} route={"/kennsluefni"} />
+                <NavItem label={"Verkefni"} route={"/verkefni"} />
+                <NavItem label={"Um vefinn"} route={"/um-vefinn"} />
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ export default function Landing() {
       <Head>
         <title>{`${WEBSITE_NAME}`}</title>
       </Head>
-      <div className="bg-gradient-to-b from-white to-gray-50">
+      <div>
         <Intro />
       </div>
     </Layout>

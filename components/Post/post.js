@@ -1,14 +1,14 @@
 import { useRouter } from "next/router";
-import { urlForImage } from "../lib/sanity";
+import { urlForImage } from "../../lib/sanity";
 import ErrorPage from "next/error";
-import Layout from "./layout";
-import Container from "./container";
+import Layout from "../layout";
+import Container from "../container";
 import PostTitle from "./post-title";
 import Head from "next/head";
-import { CMS_NAME } from "../lib/constants";
+import { CMS_NAME } from "../../lib/constants";
 import PostHeader from "./post-header";
 import PostBody from "./post-body";
-import SectionSeparator from "./section-separator";
+import SectionSeparator from "../section-separator";
 
 export default function Post({ data = {}, preview = false }) {
   const router = useRouter();
