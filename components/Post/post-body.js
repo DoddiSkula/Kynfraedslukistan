@@ -1,7 +1,7 @@
 import Link from "next/link";
 import markdownStyles from "../markdown-styles.module.css";
 import { PortableText } from "@portabletext/react";
-import CoverImage from "./cover-image";
+import CoverImage from "../cover-image";
 
 export default function PostBody({
   title,
@@ -17,7 +17,7 @@ export default function PostBody({
         <p>{description}</p>
         <h2>Leiðbeiningar</h2>
         <PortableText value={instructions} />
-        <h2>Fræðsluefni</h2>
+        <h2>Hlekkir</h2>
       </div>
 
       <div className="my-10">

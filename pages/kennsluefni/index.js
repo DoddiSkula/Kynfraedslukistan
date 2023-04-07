@@ -1,10 +1,10 @@
-import { indexQuery } from "../lib/queries";
-import { getClient, overlayDrafts } from "../lib/sanity.server";
-import Layout from "../components/layout";
+import { indexQuery } from "../../lib/queries";
+import { getClient, overlayDrafts } from "../../lib/sanity.server";
+import Layout from "../../components/layout";
 import Head from "next/head";
-import { WEBSITE_NAME } from "../lib/constants";
-import Container from "../components/container";
-import PostPlug from "../components/Post/post-plug";
+import { WEBSITE_NAME } from "../../lib/constants";
+import Container from "../../components/container";
+import Card from "../../components/Card";
 
 export default function KennsluefniPage({ allPosts, preview }) {
   return (
@@ -14,14 +14,15 @@ export default function KennsluefniPage({ allPosts, preview }) {
       </Head>
       <div className="h-screen bg-gradient-to-b from-white to-sky-50">
         <Container>
-          <div className="my-20 grid grid-cols-3">
+          <div className="my-20 flex gap-6 flex-wrap">
             {allPosts.map((post, index) => (
-              <PostPlug
+              <Card
                 key={index}
                 title={post.title}
                 slug={post.slug}
                 desc={post.description}
                 image={post.image}
+                type={"kennsluefni"}
               />
             ))}
           </div>

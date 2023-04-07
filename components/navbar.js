@@ -24,7 +24,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white sticky top-0 z-10">
+    <nav className="bg-sky-50 border-b border-gray-200 sticky top-0 z-10">
       <Container>
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -91,6 +91,7 @@ export default function Navbar() {
               <div className="flex space-x-2">
                 <NavItem label={"Kennsluefni"} route={"/kennsluefni"} />
                 <NavItem label={"Verkefni"} route={"/verkefni"} />
+                <NavItem label={"Hlekkir"} route={"/hlekkir"} />
                 <NavItem label={"Um vefinn"} route={"/um-vefinn"} />
               </div>
             </div>
