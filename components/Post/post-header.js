@@ -1,13 +1,31 @@
-import CoverImage from "./cover-image";
-import PostTitle from "./post-title";
+import Image from "next/image";
+import { urlForImage } from "../../lib/sanity";
+
+const PostImage = ({ title, image: source, priority }) => {
+  const image = source?.asset?._ref ? (
+    <div>
+      <Image
+        className="w-full h-auto rounded-lg"
+        width={2000}
+        height={10000}
+        alt={`Cover Image for ${title}`}
+        src={urlForImage(source).height(1000).width(2000).url()}
+        sizes="100vw"
+        priority={priority}
+      />
+    </div>
+  ) : (
+    <div style={{ paddingTop: "50%", backgroundColor: "#ddd" }} />
+  );
+
+  return <div className="sm:mx-0">{image}</div>;
+};
 
 export default function PostHeader({ title, coverImage }) {
   return (
     <>
-      <PostTitle>{title}</PostTitle>
-      <div className="hidden md:block md:mb-12"></div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} image={coverImage} priority />
+      <div className="mb-8">
+        <PostImage title={title} image={coverImage} priority />
       </div>
     </>
   );
