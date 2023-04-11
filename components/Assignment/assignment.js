@@ -19,8 +19,6 @@ export default function Assignment({ data = {}, preview = false }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  console.log(verkefni);
-
   return (
     <Layout preview={preview}>
       <PostContainer>

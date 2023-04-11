@@ -7,7 +7,6 @@ import PostTitle from "./post-title";
 import Head from "next/head";
 import PostHeader from "./post-header";
 import PostBody from "./post-body";
-import SectionSeparator from "../section-separator";
 import { WEBSITE_NAME } from "../../lib/constants";
 
 export default function Post({ data = {}, preview = false }) {

@@ -1,24 +1,8 @@
-import { lazy } from "react";
-import { PreviewSuspense } from "next-sanity/preview";
 import { postQuery, postSlugsQuery } from "../../lib/queries";
-import {
-  getClient,
-  overlayDrafts,
-  sanityClient,
-} from "../../lib/sanity.server";
+import { getClient, sanityClient } from "../../lib/sanity.server";
 import Post from "../../components/Post/post";
 
-const PostPreview = lazy(() => import("../../components/Post/post-preview"));
-
-export default function PostPage({ preview, data }) {
-  if (preview) {
-    return (
-      <PreviewSuspense fallback="Loading...">
-        <PostPreview data={data} />
-      </PreviewSuspense>
-    );
-  }
-
+export default function PostPage({ data }) {
   return <Post data={data} />;
 }
 

@@ -1,7 +1,5 @@
-import Link from "next/link";
-import markdownStyles from "../markdown-styles.module.css";
 import { PortableText } from "@portabletext/react";
-import CoverImage from "../cover-image";
+import Card from "../Card";
 
 export default function PostBody({
   title,
@@ -19,51 +17,31 @@ export default function PostBody({
         <PortableText value={instructions} />
         <h2>Hlekkir</h2>
       </div>
-
-      <div className="my-10">
-        {links?.map((link) => (
-          <Link
-            key={link?._id}
-            href={link?.url}
-            aria-label={link?.title}
-            target="_blank"
-          >
-            <div className="card w-96 bg-base-100 shadow-md cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all">
-              <figure>
-                <CoverImage title={link?.title} image={link?.image} />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">{link?.title}</h2>
-                <p>{link?.description}</p>
-              </div>
-            </div>
-          </Link>
+      <div className="mt-5 mb-10 flex gap-6 flex-wrap">
+        {links?.map((link, index) => (
+          <Card
+            key={index}
+            title={link.title}
+            slug={link.url}
+            desc={link.description}
+            image={link.image}
+            type={"hlekkur"}
+          />
         ))}
       </div>
       <div className="prose">
         <h2>Verkefni</h2>
       </div>
-      <div className="my-10">
-        {assignments?.map((assignment) => (
-          <Link
-            key={assignment._id}
-            href={assignment?.url ?? ""}
-            aria-label={assignment?.title}
-            target="_blank"
-          >
-            <div className="card w-96 bg-base-100 shadow-md cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all">
-              <figure>
-                <CoverImage
-                  title={assignment?.title}
-                  image={assignment?.image}
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">{assignment?.title}</h2>
-                <p>{assignment?.description}</p>
-              </div>
-            </div>
-          </Link>
+      <div className="mt-5 mb-10 flex gap-6 flex-wrap">
+        {assignments?.map((assignment, index) => (
+          <Card
+            key={index}
+            title={assignment.title}
+            slug={assignment.slug.current}
+            desc={assignment.description}
+            image={assignment.image}
+            type={"verkefni"}
+          />
         ))}
       </div>
     </div>
