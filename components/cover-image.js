@@ -1,11 +1,16 @@
 import Image from "next/image";
 import { urlForImage } from "../lib/sanity";
 
-export default function CoverImage({ title, image: source, priority }) {
+export default function CoverImage({
+  title,
+  image: source,
+  priority,
+  className = "",
+}) {
   const image = source?.asset?._ref ? (
     <div>
       <Image
-        className="w-full h-auto"
+        className={`w-full h-auto ${className}`}
         width={2000}
         height={10000}
         alt={`Cover Image for ${title}`}

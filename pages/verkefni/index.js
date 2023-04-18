@@ -12,9 +12,9 @@ export default function VerkefniPage({ allAssignments }) {
       <Head>
         <title>{`Verkefni - ${WEBSITE_NAME}`}</title>
       </Head>
-      <div className="h-screen bg-gradient-to-b from-white to-sky-50">
+      <div className="h-screen">
         <Container>
-          <div className="my-20 flex gap-6 flex-wrap">
+          <div className="my-5 flex gap-6 flex-wrap">
             {allAssignments?.map((assignment, index) => (
               <Card
                 key={index}

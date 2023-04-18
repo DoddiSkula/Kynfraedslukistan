@@ -12,16 +12,16 @@ export default function KennsluefniPage({ allPosts, preview }) {
       <Head>
         <title>{`Kennsluefni - ${WEBSITE_NAME}`}</title>
       </Head>
-      <div className="h-screen bg-gradient-to-b from-white to-sky-50">
+      <div className="min-h-screen">
         <Container>
-          <div className="my-20 flex gap-6 flex-wrap">
+          <div className="my-5 flex gap-6 flex-wrap">
             {allPosts.map((post, index) => (
               <Card
                 key={index}
                 title={post.title}
                 slug={post.slug}
                 desc={post.description}
-                image={post.image}
+                category={post.category}
                 type={"kennsluefni"}
               />
             ))}

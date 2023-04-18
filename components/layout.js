@@ -5,7 +5,7 @@ import Navbar from "./navbar";
 
 export default function Layout({ preview, children }) {
   return (
-    <>
+    <div>
       <Meta />
       <Navbar />
       <div className="min-h-screen">
@@ -13,6 +13,6 @@ export default function Layout({ preview, children }) {
         <main>{children}</main>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
