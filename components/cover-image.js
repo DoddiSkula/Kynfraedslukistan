@@ -2,26 +2,23 @@ import Image from "next/image";
 import { urlForImage } from "../lib/sanity";
 
 export default function CoverImage({
-  title,
   image: source,
   priority,
+  alt,
   className = "",
 }) {
   const image = source?.asset?._ref ? (
-    <div>
-      <Image
-        className={`w-full h-auto ${className}`}
-        width={2000}
-        height={10000}
-        alt={`Cover Image for ${title}`}
-        src={urlForImage(source).height(1000).width(2000).url()}
-        sizes="100vw"
-        priority={priority}
-      />
-    </div>
+    <Image
+      className={` ${className}`}
+      width={2000}
+      height={10000}
+      alt={alt}
+      src={urlForImage(source).height(1000).width(2000).url()}
+      priority={priority}
+    />
   ) : (
-    <div style={{ paddingTop: "50%", backgroundColor: "#ddd" }} />
+    <div className="w-full h-40 rounded-lg bg-indigo-50 relative" />
   );
 
-  return <div className="sm:mx-0">{image}</div>;
+  return <div>{image}</div>;
 }

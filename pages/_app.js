@@ -9,7 +9,7 @@ const font = Inter({
 function MyApp({ Component, pageProps }) {
   return (
     <main className={font.className}>
-      <div className="bg-sky-50">
+      <div>
         <Component {...pageProps} />
       </div>
     </main>

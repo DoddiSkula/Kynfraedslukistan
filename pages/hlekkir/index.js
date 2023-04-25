@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 import Head from "next/head";
 import { WEBSITE_NAME } from "../../lib/constants";
 import Container from "../../components/container";
-import Card from "../../components/Card";
+import LinkCard from "../../components/LinkCard";
 
 export default function HlekkirPage({ allLinks }) {
   return (
@@ -12,12 +12,13 @@ export default function HlekkirPage({ allLinks }) {
       <Head>
         <title>{`Hlekkir - ${WEBSITE_NAME}`}</title>
       </Head>
-      <div className="h-screen">
+      <div className="min-h-screen">
         <Container>
-          <div className="my-5 flex gap-6 flex-wrap">
+          <div className="my-5 grid lg:grid-cols-4 lg:gap-8 md:grid-cols-2 md:gap-4">
             {allLinks?.map((link, index) => (
-              <Card
+              <LinkCard
                 key={index}
+                link={link}
                 title={link.title}
                 slug={link.url}
                 desc={link.description}
