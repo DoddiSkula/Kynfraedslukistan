@@ -1,12 +1,21 @@
 import Link from "next/link";
 import CoverImage from "./cover-image";
+import classNames from "classnames";
 
 export default function LinkCard({ link }) {
-  console.log(link);
+  const isVideo = link.type[0] === "video";
 
   const DurationTag = () => {
     return (
-      <span class="flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-md text-sm bg-indigo-100 bg-opacity-90 text-indigo-800 absolute bottom-3 right-3">
+      <span
+        className={classNames(
+          "flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md text-sm bg-opacity-90  absolute bottom-3 right-3",
+          {
+            "bg-indigo-100 text-indigo-800 border": isVideo,
+            "bg-purple-100 text-purple-800": !isVideo,
+          }
+        )}
+      >
         {link.type[0] === "video" ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +47,7 @@ export default function LinkCard({ link }) {
             />
           </svg>
         )}
-        {link.duration} mín
+        {Math.ceil(link.duration)} mín
       </span>
     );
   };
@@ -48,11 +57,11 @@ export default function LinkCard({ link }) {
       href={link.url}
       target={"_blank"}
       aria-label={link.title}
-      className="group relative flex flex-col min-w-80 mb-6 transition-all"
+      className="group relative flex flex-col min-w-80 mb-4 transition-all"
     >
       <div className="w-full relative">
         <CoverImage
-          className="object-cover h-40 rounded-lg"
+          className="object-cover h-40 rounded-lg border border-gray-100 shadow-sm"
           image={link?.image}
           alt={"img"}
         />

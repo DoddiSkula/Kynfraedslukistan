@@ -17,7 +17,7 @@ export default function CoverImage({
       priority={priority}
     />
   ) : (
-    <div className="w-full h-40 rounded-lg bg-indigo-50 relative" />
+    <div className="w-full h-40 rounded-lg border-2 border-purple-300 relative" />
   );
 
   return <div>{image}</div>;
