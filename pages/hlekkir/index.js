@@ -1,10 +1,10 @@
-import { assignmentsQuery, linksQuery } from "../../lib/queries";
-import { getClient, overlayDrafts } from "../../lib/sanity.server";
-import Layout from "../../components/layout";
+import { linksQuery } from "lib/queries";
+import { getClient, overlayDrafts } from "lib/sanity.server";
+import Layout from "components/layout";
 import Head from "next/head";
-import { WEBSITE_NAME } from "../../lib/constants";
-import Container from "../../components/container";
-import LinkCard from "../../components/LinkCard";
+import { WEBSITE_NAME } from "lib/constants";
+import Container from "components/container";
+import LinkCard from "components/Cards/LinkCard";
 
 export default function HlekkirPage({ allLinks }) {
   return (
@@ -14,7 +14,7 @@ export default function HlekkirPage({ allLinks }) {
       </Head>
       <div className="min-h-screen">
         <Container>
-          <div className="my-5 grid lg:grid-cols-4 lg:gap-8 md:grid-cols-2 md:gap-4">
+          <div className="grid lg:grid-cols-4 lg:gap-8 md:grid-cols-2 md:gap-4">
             {allLinks?.map((link, index) => (
               <LinkCard
                 key={index}

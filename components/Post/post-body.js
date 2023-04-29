@@ -1,5 +1,5 @@
 import { PortableText } from "@portabletext/react";
-import Card from "../Card";
+import Card from "components/Cards/CourseCard";
 
 export default function PostBody({
   title,

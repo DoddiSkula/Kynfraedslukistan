@@ -1,12 +1,12 @@
-import { indexQuery } from "../../lib/queries";
-import { getClient, overlayDrafts } from "../../lib/sanity.server";
-import Layout from "../../components/layout";
+import { indexQuery } from "lib/queries";
+import { getClient, overlayDrafts } from "/lib/sanity.server";
+import Layout from "components/layout";
 import Head from "next/head";
-import { WEBSITE_NAME } from "../../lib/constants";
-import Container from "../../components/container";
-import Card from "../../components/Card";
+import { WEBSITE_NAME } from "lib/constants";
+import Container from "components/container";
+import CourseCard from "components/Cards/CourseCard";
 
-export default function KennsluefniPage({ allPosts, preview }) {
+export default function KennsluefniPage({ courses }) {
   return (
     <Layout>
       <Head>
@@ -14,16 +14,9 @@ export default function KennsluefniPage({ allPosts, preview }) {
       </Head>
       <div className="min-h-screen">
         <Container>
-          <div className="my-5 flex gap-6 flex-wrap">
-            {allPosts.map((post, index) => (
-              <Card
-                key={index}
-                title={post.title}
-                slug={post.slug}
-                desc={post.description}
-                category={post.category}
-                type={"kennsluefni"}
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {courses.map((course, index) => (
+              <CourseCard key={index} course={course} />
             ))}
           </div>
         </Container>
@@ -33,9 +26,9 @@ export default function KennsluefniPage({ allPosts, preview }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const allPosts = overlayDrafts(await getClient(preview).fetch(indexQuery));
+  const courses = overlayDrafts(await getClient(preview).fetch(indexQuery));
   return {
-    props: { allPosts, preview },
+    props: { courses, preview },
     // If webhooks isn't setup then attempt to re-generate in 1 minute intervals
     revalidate: process.env.SANITY_REVALIDATE_SECRET ? undefined : 60,
   };

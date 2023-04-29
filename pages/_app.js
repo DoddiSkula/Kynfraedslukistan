@@ -1,4 +1,4 @@
-import "../styles/index.css";
+import "styles/index.css";
 import { Inter } from "next/font/google";
 
 const font = Inter({
@@ -9,7 +9,7 @@ const font = Inter({
 function MyApp({ Component, pageProps }) {
   return (
     <main className={font.className}>
-      <div className="bg-purple-50">
+      <div className="bg-gray-50">
         <Component {...pageProps} />
       </div>
     </main>

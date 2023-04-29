@@ -9,9 +9,7 @@ export default function Landing() {
       <Head>
         <title>{`${WEBSITE_NAME}`}</title>
       </Head>
-      <div>
-        <Intro />
-      </div>
+      <Intro />
     </Layout>
   );
 }

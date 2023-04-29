@@ -1,10 +1,10 @@
-import { assignmentsQuery } from "../../lib/queries";
-import { getClient, overlayDrafts } from "../../lib/sanity.server";
-import Layout from "../../components/layout";
+import { assignmentsQuery } from "lib/queries";
+import { getClient, overlayDrafts } from "lib/sanity.server";
+import Layout from "components/layout";
 import Head from "next/head";
-import { WEBSITE_NAME } from "../../lib/constants";
-import Container from "../../components/container";
-import Card from "../../components/Card";
+import { WEBSITE_NAME } from "lib/constants";
+import Container from "/components/container";
+import AssignmentCard from "components/Cards/AssignmentCard";
 
 export default function VerkefniPage({ allAssignments }) {
   return (
@@ -14,16 +14,9 @@ export default function VerkefniPage({ allAssignments }) {
       </Head>
       <div className="h-screen">
         <Container>
-          <div className="my-5 flex gap-6 flex-wrap">
+          <div className="flex flex-wrap gap-4">
             {allAssignments?.map((assignment, index) => (
-              <Card
-                key={index}
-                title={assignment.title}
-                slug={assignment.slug}
-                desc={assignment.description}
-                image={assignment.image}
-                type={"verkefni"}
-              />
+              <AssignmentCard key={index} assignment={assignment} />
             ))}
           </div>
         </Container>
