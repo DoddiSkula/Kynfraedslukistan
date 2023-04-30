@@ -12,15 +12,13 @@ export default function VerkefniPage({ allAssignments }) {
       <Head>
         <title>{`Verkefni - ${WEBSITE_NAME}`}</title>
       </Head>
-      <div className="h-screen">
-        <Container>
-          <div className="flex flex-wrap gap-4">
-            {allAssignments?.map((assignment, index) => (
-              <AssignmentCard key={index} assignment={assignment} />
-            ))}
-          </div>
-        </Container>
-      </div>
+      <Container>
+        <div className="flex flex-wrap gap-4">
+          {allAssignments?.map((assignment, index) => (
+            <AssignmentCard key={index} assignment={assignment} />
+          ))}
+        </div>
+      </Container>
     </Layout>
   );
 }

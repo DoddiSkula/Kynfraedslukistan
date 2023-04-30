@@ -12,23 +12,21 @@ export default function HlekkirPage({ allLinks }) {
       <Head>
         <title>{`Hlekkir - ${WEBSITE_NAME}`}</title>
       </Head>
-      <div className="min-h-screen">
-        <Container>
-          <div className="grid lg:grid-cols-4 lg:gap-8 md:grid-cols-2 md:gap-4">
-            {allLinks?.map((link, index) => (
-              <LinkCard
-                key={index}
-                link={link}
-                title={link.title}
-                slug={link.url}
-                desc={link.description}
-                image={link.image}
-                type={"hlekkur"}
-              />
-            ))}
-          </div>
-        </Container>
-      </div>
+      <Container>
+        <div className="grid lg:grid-cols-4 lg:gap-8 md:grid-cols-2 md:gap-4">
+          {allLinks?.map((link, index) => (
+            <LinkCard
+              key={index}
+              link={link}
+              title={link.title}
+              slug={link.url}
+              desc={link.description}
+              image={link.image}
+              type={"hlekkur"}
+            />
+          ))}
+        </div>
+      </Container>
     </Layout>
   );
 }

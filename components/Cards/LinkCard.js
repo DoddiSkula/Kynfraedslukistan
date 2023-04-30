@@ -61,7 +61,7 @@ export default function LinkCard({ link }) {
     >
       <div className="w-full relative">
         <CoverImage
-          className="object-cover h-40 rounded-lg border border-gray-100 shadow-sm"
+          className="object-cover h-40 rounded-lg border border-gray-100 shadow-sm transition-all"
           image={link?.image}
           alt={"img"}
         />

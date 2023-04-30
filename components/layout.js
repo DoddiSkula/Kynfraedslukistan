@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <div>
       <Meta />
       <Navbar />
-      <div className="min-h-screen py-28">
+      <div className="min-h-screen pt-28 pb-12">
         <div className="flex-1">{children}</div>
       </div>
       <Footer />

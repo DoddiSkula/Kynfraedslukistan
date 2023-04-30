@@ -1,19 +1,45 @@
-import { postQuery, postSlugsQuery } from "../../lib/queries";
-import { getClient, sanityClient } from "../../lib/sanity.server";
-import Post from "../../components/Post/post";
+import Layout from "components/layout";
+import { postQuery, postSlugsQuery } from "lib/queries";
+import { getClient, sanityClient } from "lib/sanity.server";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import ErrorPage from "next/error";
+import { WEBSITE_NAME } from "lib/constants";
 
-export default function PostPage({ data }) {
-  return <Post data={data} />;
+export default function PostPage({ data = {} }) {
+  const router = useRouter();
+
+  const { kennsluefni } = data;
+  const slug = kennsluefni?.slug;
+
+  if (!router.isFallback && !slug) {
+    return <ErrorPage statusCode={404} />;
+  }
+
+  return (
+    <Layout>
+      {router.isFallback ? (
+        <h2 className="text-2xl">Loading…</h2>
+      ) : (
+        <>
+          <article>
+            <Head>
+              <title>{`${kennsluefni.title} | ${WEBSITE_NAME}`}</title>
+            </Head>
+          </article>
+        </>
+      )}
+    </Layout>
+  );
 }
 
-export async function getStaticProps({ params, preview = false }) {
-  const { kennsluefni } = await getClient(preview).fetch(postQuery, {
+export async function getStaticProps({ params }) {
+  const { kennsluefni } = await getClient().fetch(postQuery, {
     slug: params.slug,
   });
 
   return {
     props: {
-      preview,
       data: {
         kennsluefni,
       },
