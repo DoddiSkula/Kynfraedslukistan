@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="text-gray-600 body-font h-16 flex items-center justify-center bg-violet-100 text-center">
       <Container>
         <div>
-          <p className="text-violet-500">
+          <p className="text-violet-600">
             {WEBSITE_NAME} &copy; {new Date().getFullYear()}
           </p>
         </div>

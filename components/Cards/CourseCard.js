@@ -12,18 +12,18 @@ export default function CourseCard({ course }) {
     >
       <div
         className={classNames(
-          "rounded-xl  flex flex-col justify-between p-8 h-72 bg-gradient-to-br  hover:shadow-2xl hover:scale-105 transition-all text-white",
+          "rounded-xl  flex flex-col justify-between p-8 h-80 bg-gradient-to-br hover:shadow-2xl hover:scale-105 transition-all text-white",
           {
-            "from-teal-500 to-teal-400": categoryStr === "samskipti",
-            "from-indigo-500 to-indigo-400": categoryStr === "sambönd",
-            "from-pink-500 to-pink-400": categoryStr === "kynlíf",
+            "from-blue-500 to-sky-300": categoryStr === "samskipti",
+            "from-violet-500 to-purple-300": categoryStr === "sambönd",
+            "from-pink-500 to-rose-300": categoryStr === "kynlíf",
           }
         )}
       >
-        <p className="tracking-widest text-white/80 uppercase text-sm">
+        <p className="tracking-widest font-semibold text-white/80 uppercase text-sm">
           {categoryStr}
         </p>
-        <div className="mb-3">
+        <div className="mb-3 w-[17rem]">
           <h2 className="font-bold text-3xl tracking-wide mb-2 break-words">
             {course.title}
           </h2>
@@ -31,9 +31,9 @@ export default function CourseCard({ course }) {
             className={classNames(
               "tracking-wide text-sm break-words text-ellipsis overflow-hidden line-clamp-3",
               {
-                "text-teal-50": categoryStr === "samskipti",
-                "text-indigo-50": categoryStr === "sambönd",
-                "text-pink-50": categoryStr === "kynlíf",
+                "text-blue-100": categoryStr === "samskipti",
+                "text-purple-100": categoryStr === "sambönd",
+                "text-pink-100": categoryStr === "kynlíf",
               }
             )}
           >
