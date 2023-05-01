@@ -57,7 +57,7 @@ export default function LinkCard({ link }) {
       href={link.url}
       target={"_blank"}
       aria-label={link.title}
-      className="group relative flex flex-col min-w-80 mb-4 transition-all"
+      className="group relative flex flex-col min-w-80 md:mb-1 transition-all mb-10"
     >
       <div className="w-full relative">
         <CoverImage
