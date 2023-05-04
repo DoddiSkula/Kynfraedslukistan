@@ -61,7 +61,7 @@ export default function PostPage({ data = {} }) {
                 Verkefni
               </h2>
               {kennsluefni.verkefni?.length > 0 ? (
-                <div className="grid lg:grid-cols-3 lg:gap-8 sm:grid-cols-2 sm:gap-8 md:gap-4 mb-10">
+                <div className="flex">
                   {kennsluefni.verkefni?.map((assignment, index) => (
                     <AssignmentCard key={index} assignment={assignment} />
                   ))}
