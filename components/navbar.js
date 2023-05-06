@@ -37,7 +37,12 @@ export default function Navbar() {
       </div>
 
       <div className="bg-white px-5 h-16 w-full border flex items-center justify-between sm:hidden">
-        <p className="text-violet-800 font-semibold text-lg">{WEBSITE_NAME}</p>
+        <Link href={"/"}>
+          <p className="text-violet-800 font-semibold text-lg">
+            {WEBSITE_NAME}
+          </p>
+        </Link>
+
         <button
           type="button"
           onClick={() => setDrawerOpen((prev) => !prev)}
@@ -51,13 +56,13 @@ export default function Navbar() {
               className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
               aria-hidden="true"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>
@@ -66,13 +71,13 @@ export default function Navbar() {
               className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
               aria-hidden="true"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
               />
             </svg>

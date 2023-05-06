@@ -10,7 +10,7 @@ export default function HlekkirPage({ allLinks }) {
   return (
     <Layout>
       <Head>
-        <title>{`Hlekkir - ${WEBSITE_NAME}`}</title>
+        <title>{`Fræðsla - ${WEBSITE_NAME}`}</title>
       </Head>
       <Container>
         <div className="grid lg:grid-cols-4 lg:gap-8 md:grid-cols-2 md:gap-4">
