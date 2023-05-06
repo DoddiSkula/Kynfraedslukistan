@@ -38,9 +38,7 @@ export default function Navbar() {
 
       <div className="bg-white px-5 h-16 w-full border flex items-center justify-between sm:hidden">
         <Link href={"/"}>
-          <p className="text-violet-800 font-semibold text-lg">
-            {WEBSITE_NAME}
-          </p>
+          <p className="text-gray-700 font-semibold text-lg">{WEBSITE_NAME}</p>
         </Link>
 
         <button

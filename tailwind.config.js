@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "3xl": "1920px",
+      },
       colors: {
         "accent-1": "#FAFAFA",
         "accent-2": "#EAEAEA",
