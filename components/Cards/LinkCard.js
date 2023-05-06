@@ -1,6 +1,8 @@
 import Link from "next/link";
 import CoverImage from "../cover-image";
 import classNames from "classnames";
+import videoFallback from "public/images/video-fallback.png";
+import articleFallback from "public/images/article-fallback.png";
 
 export default function LinkCard({ link }) {
   const isVideo = link.type[0] === "video";
@@ -62,7 +64,13 @@ export default function LinkCard({ link }) {
       <div className="w-full relative">
         <CoverImage
           className="object-cover h-40 rounded-lg border border-gray-100 shadow-sm transition-all"
-          image={link?.image}
+          image={
+            link.image?.asset?._ref
+              ? link?.image
+              : isVideo
+              ? videoFallback
+              : articleFallback
+          }
           alt={"img"}
         />
         <DurationTag />

@@ -20,8 +20,6 @@ export default function PostPage({ data = {} }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  console.log(kennsluefni);
-
   return (
     <Layout>
       {router.isFallback ? (
@@ -34,30 +32,30 @@ export default function PostPage({ data = {} }) {
               <title>{`${kennsluefni.title} | ${WEBSITE_NAME}`}</title>
             </Head>
             <div>
-              <h1 className="text-3xl sm:text-6xl font-bold mb-4 tracking-tighter leading-tight">
+              <h1 className="text-3xl sm:text-6xl font-bold mb-8 tracking-tighter leading-tight">
                 {kennsluefni.title}
               </h1>
-              <p className="text-lg text-gray-600 leading-loose mb-6">
+              <p className="text-lg text-gray-600 leading-loose mb-8">
                 {kennsluefni.description}
               </p>
-              <div className="prose text-lg text-gray-600 leading-8 mb-10">
+              <div className="prose text-lg text-gray-600 leading-8 mb-14">
                 <PortableText value={kennsluefni.instructions} />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 tracking-tighter leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 leading-tight">
                 Fræðsluefni
               </h2>
               {kennsluefni.hlekkir?.length > 0 ? (
-                <div className="grid lg:grid-cols-3 lg:gap-8 sm:grid-cols-2 sm:gap-8 md:gap-4 mb-10">
+                <div className="grid lg:grid-cols-3 lg:gap-8 sm:grid-cols-2 sm:gap-8 md:gap-4 mb-14">
                   {kennsluefni.hlekkir?.map((link, index) => (
                     <LinkCard key={index} link={link} />
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500 mb-10">
+                <p className="text-gray-500 mb-14">
                   Engin fræðsla tengd þessu kennsluefni.
                 </p>
               )}
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 tracking-tighter leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 leading-tight">
                 Verkefni
               </h2>
               {kennsluefni.verkefni?.length > 0 ? (

@@ -7,17 +7,19 @@ export default function CoverImage({
   alt,
   className = "",
 }) {
-  const image = source?.asset?._ref ? (
+  const image = (
     <Image
       className={` ${className}`}
       width={2000}
       height={10000}
       alt={alt}
-      src={urlForImage(source).height(1000).width(2000).url()}
+      src={
+        source?.asset?._ref
+          ? urlForImage(source).height(1000).width(2000).url()
+          : source
+      }
       priority={priority}
     />
-  ) : (
-    <div className="w-full h-40 rounded-lg border-2 border-purple-300 relative" />
   );
 
   return <div>{image}</div>;
