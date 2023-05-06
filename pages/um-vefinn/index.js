@@ -57,7 +57,7 @@ export default function AboutPage() {
         <div>
           {about.map((section, index) => (
             <div key={index} className="mb-10">
-              <h2 className="text-xl sm:text-xl font-bold mb-2 text-violet-700 leading-wide">
+              <h2 className="text-xl sm:text-xl font-bold mb-2 text-violet-600 leading-wide">
                 {section.title}
               </h2>
               <p className="text-gray-600 leading-8">{section.text}</p>

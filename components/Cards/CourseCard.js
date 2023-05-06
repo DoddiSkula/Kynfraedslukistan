@@ -1,8 +1,7 @@
 import Link from "next/link";
 import classNames from "classnames";
 
-export default function CourseCard({ course }) {
-  const categoryStr = course.category ? course.category[0] : null;
+export default function CourseCard({ course, colorIndex = 1 }) {
   return (
     <Link
       href={`/kennsluefni/${course.slug}`}
@@ -11,17 +10,15 @@ export default function CourseCard({ course }) {
     >
       <div
         className={classNames(
-          "rounded-xl  flex flex-col justify-between p-8 h-80 bg-gradient-to-br hover:shadow-2xl hover:scale-105 transition-all text-white",
+          "rounded-xl  flex flex-col justify-between  p-8 h-80 bg-gradient-to-br hover:shadow-2xl hover:scale-105 transition-all text-white",
           {
-            "from-blue-500 to-sky-300": categoryStr === "samskipti",
-            "from-violet-500 to-purple-300": categoryStr === "sambönd",
-            "from-pink-500 to-rose-300": categoryStr === "kynlíf",
+            "from-blue-500 to-sky-300": [3, 5].includes(colorIndex),
+            "from-violet-500 to-purple-300": [2, 4].includes(colorIndex),
+            "from-pink-500 to-rose-300": [1, 6].includes(colorIndex),
           }
         )}
       >
-        <p className="tracking-widest font-semibold text-white/80 uppercase text-sm">
-          {categoryStr}
-        </p>
+        <p className="tracking-widest font-semibold text-white/80 uppercase text-sm"></p>
         <div className="mb-3 w-[17rem]">
           <h2 className="font-bold text-3xl tracking-wide mb-2 break-words">
             {course.title}
@@ -30,9 +27,9 @@ export default function CourseCard({ course }) {
             className={classNames(
               "tracking-wide text-sm break-words text-ellipsis overflow-hidden line-clamp-3",
               {
-                "text-blue-100": categoryStr === "samskipti",
-                "text-purple-100": categoryStr === "sambönd",
-                "text-pink-100": categoryStr === "kynlíf",
+                "text-blue-100": [3, 5].includes(colorIndex),
+                "text-purple-100": [2, 4].includes(colorIndex),
+                "text-pink-100": [1, 6].includes(colorIndex),
               }
             )}
           >
