@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { urlForImage } from "../lib/sanity";
+import { urlForImage } from "lib/sanity";
 
-export default function CoverImage({
+export default function CardImage({
   image: source,
   priority,
   alt,

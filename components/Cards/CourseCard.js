@@ -3,7 +3,6 @@ import classNames from "classnames";
 
 export default function CourseCard({ course }) {
   const categoryStr = course.category ? course.category[0] : null;
-  console.log(course);
   return (
     <Link
       href={`/kennsluefni/${course.slug}`}

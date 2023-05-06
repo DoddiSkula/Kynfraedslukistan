@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CoverImage from "../cover-image";
+import CardImage from "./CardImage";
 import classNames from "classnames";
 import videoFallback from "public/images/video-fallback.png";
 import articleFallback from "public/images/article-fallback.png";
@@ -62,7 +62,7 @@ export default function LinkCard({ link }) {
       className="group relative flex flex-col min-w-80 md:mb-1 transition-all mb-10"
     >
       <div className="w-full relative">
-        <CoverImage
+        <CardImage
           className="object-cover h-40 rounded-lg border border-gray-100 shadow-sm transition-all"
           image={
             link.image?.asset?._ref

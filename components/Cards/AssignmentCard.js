@@ -1,15 +1,14 @@
-import CoverImage from "components/cover-image";
+import CardImage from "components/Cards/CardImage";
 import Link from "next/link";
 
 export default function AssignmentCard({ assignment }) {
-  console.log(assignment);
   return (
     <div
       className={
         "rounded-lg border flex flex-col min-h-96 max-w-[22rem] bg-white shadow-md text-gray-700"
       }
     >
-      <CoverImage
+      <CardImage
         className="object-cover h-48 rounded-t-lg border-b"
         image={assignment.image}
         alt={"verkefna mynd"}
