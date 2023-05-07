@@ -41,7 +41,7 @@ export default function AboutPage() {
       <Head>
         <title>{`Um vefinn - ${WEBSITE_NAME}`}</title>
       </Head>
-      <div className="container mx-auto px-5 2xl:max-w-4xl 3xl:max-w-5xl mt-3">
+      <div className="container mx-auto px-5 2xl:max-w-4xl 3xl:max-w-5xl mt-3 pt-24">
         <div className="mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 leading-tight">
             Um vefinn

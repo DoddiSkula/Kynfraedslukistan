@@ -25,14 +25,14 @@ export default function PostPage({ data = {} }) {
       {router.isFallback ? (
         <h2 className="text-2xl">Loading…</h2>
       ) : (
-        <div className="container px-6 sm:px-10 mx-auto max-w-5xl mb-20">
+        <div className="container px-6 sm:px-10 mx-auto max-w-5xl mb-20 pt-24">
           <BackButton />
           <article>
             <Head>
               <title>{`${kennsluefni.title} | ${WEBSITE_NAME}`}</title>
             </Head>
             <div>
-              <h1 className="text-3xl sm:text-6xl font-bold mb-8 tracking-tighter leading-tight">
+              <h1 className="text-4xl sm:text-6xl font-bold mb-3 sm:mb-8 tracking-tighter leading-tight">
                 {kennsluefni.title}
               </h1>
               <p className="text-lg text-gray-600 leading-loose mb-8">

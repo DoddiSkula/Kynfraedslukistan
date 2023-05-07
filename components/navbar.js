@@ -31,7 +31,7 @@ export default function Navbar() {
     return (
       <Link
         href={route}
-        className={`hover:bg-violet-50 hover:text-violet-600 rounded-xl px-5 py-3 font-medium whitespace-nowrap  ${
+        className={`hover:bg-violet-50 hover:text-violet-600 rounded-full px-5 py-3 font-medium whitespace-nowrap  ${
           currentRoute === route
             ? "bg-violet-50 text-violet-600 font-semibold"
             : "text-gray-400"
@@ -48,12 +48,11 @@ export default function Navbar() {
     <nav className="fixed top-0 sm:top-4 left-0 right-0 m-auto z-50 flex flex-col sm:items-center sm:justify-center">
       <div
         className={classNames(
-          "hidden sm:flex w-fit bg-white border rounded-2xl p-1 gap-1 items-center justify-center transition-all",
-          { "shadow-lg": scrollPosition > 10 }
+          "hidden sm:flex w-fit  rounded-full p-1 gap-1 items-center justify-center transition-all",
+          { "shadow-lg bg-white border": scrollPosition > 10 }
         )}
       >
         <NavItem label={"Forsíða"} route={"/"} />
-        <NavItem label={"Kennsluefni"} route={"/kennsluefni"} />
         <NavItem label={"Fræðsla"} route={"/fraedsla"} />
         <NavItem label={"Verkefni"} route={"/verkefni"} />
         <NavItem label={"Um vefinn"} route={"/um-vefinn"} />
@@ -116,7 +115,6 @@ export default function Navbar() {
         <div className="sm:hidden" id="mobile-menu">
           <div className="flex flex-col bg-white border-b space-y-1 px-2 pb-3 pt-2">
             <NavItem label={"Forsíða"} route={"/"} />
-            <NavItem label={"Kennsluefni"} route={"/kennsluefni"} />
             <NavItem label={"Fræðsla"} route={"/fraedsla"} />
             <NavItem label={"Verkefni"} route={"/verkefni"} />
             <NavItem label={"Um vefinn"} route={"/um-vefinn"} />

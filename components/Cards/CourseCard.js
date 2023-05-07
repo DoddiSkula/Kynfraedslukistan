@@ -10,7 +10,7 @@ export default function CourseCard({ course, colorIndex = 1 }) {
     >
       <div
         className={classNames(
-          "rounded-xl  flex flex-col justify-between  p-8 h-80 bg-gradient-to-br hover:shadow-2xl hover:scale-105 transition-all text-white",
+          "rounded-xl  flex flex-col justify-between  p-8 h-72 bg-gradient-to-br hover:shadow-2xl hover:scale-105 transition-all text-white",
           {
             "from-blue-500 to-sky-300": [3, 5].includes(colorIndex),
             "from-violet-500 to-purple-300": [2, 4].includes(colorIndex),
