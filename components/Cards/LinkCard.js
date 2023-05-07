@@ -72,12 +72,12 @@ export default function LinkCard({ link }) {
   };
 
   return (
-    <div>
+    <div className=" md:mb-1 mb-10">
       <Link
         href={link.url}
         target={"_blank"}
         aria-label={link.title}
-        className="group relative flex flex-col min-w-80 md:mb-1 transition-all mb-10"
+        className="group relative flex flex-col min-w-80 transition-all "
       >
         <div className="w-full relative">
           <CardImage
