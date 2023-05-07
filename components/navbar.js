@@ -2,6 +2,9 @@ import { WEBSITE_NAME } from "lib/constants";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Logo from "public/images/logo.svg";
+import Image from "next/image";
+import classNames from "classnames";
 
 export default function Navbar() {
   const router = useRouter();
@@ -36,8 +39,14 @@ export default function Navbar() {
         <NavItem label={"Um vefinn"} route={"/um-vefinn"} />
       </div>
 
-      <div className="bg-white px-5 h-16 w-full border flex items-center justify-between sm:hidden">
-        <Link href={"/"}>
+      <div
+        className={classNames(
+          "bg-white px-5 h-16 w-full border-b flex items-center justify-between sm:hidden",
+          { "border-none": drawerOpen }
+        )}
+      >
+        <Link href={"/"} className="flex items-center gap-3">
+          <Image src={Logo} alt="logo" className="w-7 h-7"></Image>
           <p className="text-gray-700 font-semibold text-lg">{WEBSITE_NAME}</p>
         </Link>
 
@@ -85,7 +94,7 @@ export default function Navbar() {
 
       {drawerOpen && (
         <div className="sm:hidden" id="mobile-menu">
-          <div className="flex flex-col bg-white border space-y-1 px-2 pb-3 pt-2">
+          <div className="flex flex-col bg-white border-b space-y-1 px-2 pb-3 pt-2">
             <NavItem label={"Forsíða"} route={"/"} />
             <NavItem label={"Kennsluefni"} route={"/kennsluefni"} />
             <NavItem label={"Fræðsla"} route={"/fraedsla"} />
