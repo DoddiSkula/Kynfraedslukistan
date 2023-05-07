@@ -22,14 +22,14 @@ export default function Landing({ courses }) {
               <h1 class="text-4xl mb-6 sm:mb-10 font-extrabold text-gray-800 md:text-5xl lg:text-6xl 3xl:text-7xl ">
                 {WEBSITE_NAME}
               </h1>
-              <p class="text-sm sm:text-base mb-10 sm:mb-16 font-medium w-fit text-violet-800 p-4 px-6 bg-white rounded-full border border-violet-100 shadow-lg shadow-violet-300/20">
+              <p className="text-sm sm:text-base mb-10 sm:mb-16 font-medium w-fit text-violet-800 p-4 px-6 bg-white rounded-full border border-violet-100 shadow-lg shadow-violet-300/20">
                 Fræðsluefni og kennsluleiðbeiningar fyrir kynfræðslu á
                 unglingastigi
               </p>
             </div>
           </div>
         </div>
-        <div className="mx-auto px-5 max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="mx-auto px-5 mb-32 max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {courses?.map((course, index) => (
             <CourseCard key={index} course={course} colorIndex={index + 1} />
           ))}
