@@ -110,10 +110,9 @@ export default function Navbar() {
           )}
         </button>
       </div>
-
       {drawerOpen && (
         <div className="sm:hidden" id="mobile-menu">
-          <div className="flex flex-col bg-white border-b space-y-1 px-2 pb-3 pt-2">
+          <div className="flex shadow-xl flex-col shad bg-white border-b space-y-1 px-2 pb-3 pt-2">
             <NavItem label={"Forsíða"} route={"/"} />
             <NavItem label={"Fræðsla"} route={"/fraedsla"} />
             <NavItem label={"Verkefni"} route={"/verkefni"} />
