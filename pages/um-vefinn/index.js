@@ -13,7 +13,7 @@ const about = [
   },
   {
     title: "Hvernig á að nota vefinn?",
-    text: `Á forsíðu vefsins má finna sex umfjöllunarefni sem hvert og eitt einblína á ákveðinn þátt innan kynfræðslunnar. 
+    text: `Á forsíðu vefsins má finna sex umfjöllunarefni sem hvert og eitt einblínir á ákveðinn þátt innan kynfræðslunnar. 
     Undir hverju umfjöllunarefni má nálgast tillögur að kennsluaðferðum, fræðsluefni og verkefnum.`,
   },
 ];
