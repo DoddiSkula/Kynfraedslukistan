@@ -33,7 +33,7 @@ export default function Navbar() {
         href={route}
         className={`hover:bg-violet-50 hover:text-violet-600 rounded-full px-5 py-3 font-medium whitespace-nowrap  ${
           currentRoute === route
-            ? "bg-violet-50 text-violet-600 font-semibold"
+            ? "bg-violet-50 text-violet-600"
             : "text-gray-400"
         }`}
         aria-current="page"
