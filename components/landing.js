@@ -19,7 +19,7 @@ export default function Landing({ courses }) {
               <div className="w-24 h-24 mb-8 rounded-full border border-violet-100 shadow-md shadow-violet-100 flex items-center justify-center bg-white">
                 <Image src={Logo} alt="logo" className="w-12 h-12"></Image>
               </div>
-              <h1 class="text-4xl mb-6 sm:mb-10 font-extrabold text-gray-800 md:text-5xl lg:text-6xl 3xl:text-7xl ">
+              <h1 className="text-4xl mb-6 sm:mb-10 font-extrabold text-gray-800 md:text-5xl lg:text-6xl 3xl:text-7xl ">
                 {WEBSITE_NAME}
               </h1>
               <p className="text-sm sm:text-base mb-10 sm:mb-16 font-medium w-fit text-violet-800 p-4 px-6 bg-white rounded-full border border-violet-100 shadow-lg shadow-violet-300/20">

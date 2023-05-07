@@ -2,36 +2,19 @@ import Layout from "components/layout";
 import Head from "next/head";
 import { WEBSITE_NAME } from "lib/constants";
 
+const summary = `Vefurinn er lokaverkefni Diljár Magneu Oddsdóttur til B.Ed. gráðu í grunnskólakennslu með áherslu á samfélagsgreinar við Háskóla Íslands.
+ Markmið vefsins er að svara kalli unglinga eftir bættri kynfræðslu í grunnskólum. 
+ Vefurinn einblínir á félagslegaþætti kynfræðslunnar.`;
+
 const about = [
   {
     title: "Fyrir hvern er vefurinn?",
-    text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae
-             egestas purus, eu imperdiet odio. Aenean vehicula tempor metus, nec
-             varius ligula molestie nec. Nulla facilisi. Maecenas nec elit
-             auctor, tincidunt ipsum non, pellentesque tellus. Aenean
-             sollicitudin eu felis non consectetur. Nulla ac nunc vestibulum,
-             congue est ac, aliquam velit. Mauris a scelerisque metus. Nulla
-             dapibus ut nisl ac dapibus.`,
+    text: `Vefurinn er ætlaður þeim sem sinna kynfræðslukennslu á unglingastigi og veita þeim greiðan aðgang að kennsluefni um félagslegaþætti kynfræðslunnar.`,
   },
   {
     title: "Hvernig á að nota vefinn?",
-    text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae
-             egestas purus, eu imperdiet odio. Aenean vehicula tempor metus, nec
-             varius ligula molestie nec. Nulla facilisi. Maecenas nec elit
-             auctor, tincidunt ipsum non, pellentesque tellus. Aenean
-             sollicitudin eu felis non consectetur. Nulla ac nunc vestibulum,
-             congue est ac, aliquam velit. Mauris a scelerisque metus. Nulla
-             dapibus ut nisl ac dapibus.`,
-  },
-  {
-    title: "Hæfniviðmið",
-    text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae
-             egestas purus, eu imperdiet odio. Aenean vehicula tempor metus, nec
-             varius ligula molestie nec. Nulla facilisi. Maecenas nec elit
-             auctor, tincidunt ipsum non, pellentesque tellus. Aenean
-             sollicitudin eu felis non consectetur. Nulla ac nunc vestibulum,
-             congue est ac, aliquam velit. Mauris a scelerisque metus. Nulla
-             dapibus ut nisl ac dapibus.`,
+    text: `Á forsíðu vefsins má finna sex umfjöllunarefni sem hvert og eitt einblína á ákveðinn þátt innan kynfræðslunnar. 
+    Undir hverju umfjöllunarefni má nálgast tillögur að kennsluaðferðum, fræðsluefni og verkefnum.`,
   },
 ];
 
@@ -41,18 +24,12 @@ export default function AboutPage() {
       <Head>
         <title>{`Um vefinn - ${WEBSITE_NAME}`}</title>
       </Head>
-      <div className="container mx-auto px-5 2xl:max-w-4xl 3xl:max-w-5xl mt-3 pt-24">
+      <div className="container mx-auto px-5 2xl:max-w-4xl 3xl:max-w-5xl pt-24">
         <div className="mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 leading-tight">
             Um vefinn
           </h2>
-          <p className="text-gray-600 leading-8">{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae
-             egestas purus, eu imperdiet odio. Aenean vehicula tempor metus, nec
-             varius ligula molestie nec. Nulla facilisi. Maecenas nec elit
-             auctor, tincidunt ipsum non, pellentesque tellus. Aenean
-             sollicitudin eu felis non consectetur. Nulla ac nunc vestibulum,
-             congue est ac, aliquam velit. Mauris a scelerisque metus. Nulla
-             dapibus ut nisl ac dapibus.`}</p>
+          <p className="text-gray-600 leading-8">{summary}</p>
         </div>
         <div>
           {about.map((section, index) => (
