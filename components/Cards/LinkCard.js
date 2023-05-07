@@ -3,9 +3,26 @@ import CardImage from "./CardImage";
 import classNames from "classnames";
 import videoFallback from "public/images/video-fallback.png";
 import articleFallback from "public/images/article-fallback.png";
+import { useEffect, useRef, useState } from "react";
 
 export default function LinkCard({ link }) {
+  const [showReadMoreBtn, setShowReadMoreBtn] = useState(false);
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  const ref = useRef(null);
+
   const isVideo = link.type[0] === "video";
+
+  const showReadMoreButton = (element) => {
+    if (
+      element.offsetHeight < element.scrollHeight ||
+      element.offsetWidth < element.scrollWidth
+    ) {
+      setShowReadMoreBtn(true);
+    }
+  };
+
+  useEffect(() => showReadMoreButton(ref?.current), [ref]);
 
   const DurationTag = () => {
     return (
@@ -55,35 +72,53 @@ export default function LinkCard({ link }) {
   };
 
   return (
-    <Link
-      href={link.url}
-      target={"_blank"}
-      aria-label={link.title}
-      className="group relative flex flex-col min-w-80 md:mb-1 transition-all mb-10"
-    >
-      <div className="w-full relative">
-        <CardImage
-          className="object-cover h-40 rounded-lg border border-gray-100 shadow-sm transition-all"
-          image={
-            link.image?.asset?._ref
-              ? link?.image
-              : isVideo
-              ? videoFallback
-              : articleFallback
-          }
-          alt={"img"}
-        />
-        <DurationTag />
-      </div>
+    <div>
+      <Link
+        href={link.url}
+        target={"_blank"}
+        aria-label={link.title}
+        className="group relative flex flex-col min-w-80 md:mb-1 transition-all mb-10"
+      >
+        <div className="w-full relative">
+          <CardImage
+            className="object-cover h-40 rounded-lg border border-gray-100 shadow-sm transition-all"
+            image={
+              link.image?.asset?._ref
+                ? link?.image
+                : isVideo
+                ? videoFallback
+                : articleFallback
+            }
+            alt={"img"}
+          />
+          <DurationTag />
+        </div>
 
-      <div className="p-1 pt-3">
-        <h3 className="group-hover:underline line-clamp-2 text-lg font-bold text-gray-800">
-          {link.title}
-        </h3>
-        <p className="mt-1 line-clamp-3 text-sm text-gray-500 min-w-72 max-h-20 overflow-hidden text-ellipsis">
-          {link.description}
-        </p>
-      </div>
-    </Link>
+        <div className="pt-3">
+          <h3 className="group-hover:underline line-clamp-2 text-lg font-bold text-gray-800">
+            {link.title}
+          </h3>
+          <p
+            className={classNames(
+              "mt-1 line-clamp-2 text-sm text-gray-500 min-w-72 overflow-hidden text-ellipsis",
+              {
+                "line-clamp-none": showFullDescription,
+              }
+            )}
+            ref={ref}
+          >
+            {link.description}
+          </p>
+        </div>
+      </Link>
+      {showReadMoreBtn && (
+        <button
+          onClick={() => setShowFullDescription((prev) => !prev)}
+          className="text-sm text-left text-violet-700 hover:text-violet-900 hover:underline"
+        >
+          {showFullDescription ? "Minnka" : "Lesa meira"}
+        </button>
+      )}
+    </div>
   );
 }

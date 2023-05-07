@@ -7,6 +7,7 @@ import Container from "components/container";
 import LinkCard from "components/Cards/LinkCard";
 
 export default function HlekkirPage({ allLinks }) {
+  const sortedLinks = allLinks?.sort((a, b) => a.title.localeCompare(b.title));
   return (
     <Layout>
       <Head>
@@ -14,7 +15,7 @@ export default function HlekkirPage({ allLinks }) {
       </Head>
       <Container>
         <div className="grid lg:grid-cols-4 lg:gap-8 md:grid-cols-2 md:gap-4">
-          {allLinks?.map((link, index) => (
+          {sortedLinks?.map((link, index) => (
             <LinkCard
               key={index}
               link={link}
