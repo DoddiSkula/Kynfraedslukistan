@@ -12,17 +12,14 @@ export default function Landing({ courses }) {
       <Head>
         <title>{`${WEBSITE_NAME}`}</title>
       </Head>
-      <section className="pt-24 sm:pt-28">
+      <section className="pt-24 sm:pt-28 min-h-screen">
         <div className="flex flex-col justify-center">
           <div className="container mx-auto px-5 max-w-7xl">
             <div className="mx-auto max-w-screen-xl text-center flex flex-col items-center justify-center">
-              <div className="w-24 h-24 mb-8 rounded-full border border-violet-100 shadow-md shadow-violet-100 flex items-center justify-center bg-white">
-                <Image src={Logo} alt="logo" className="w-12 h-12"></Image>
-              </div>
-              <h1 className="text-4xl mb-6 sm:mb-10 font-extrabold text-gray-800 md:text-5xl lg:text-6xl 3xl:text-7xl ">
-                {WEBSITE_NAME}
+              <h1 className="text-4xl mb-4 sm:mb-6 font-extrabold text-gray-800 md:text-5xl lg:text-6xl 3xl:text-7xl ">
+                Kynfræðslukistan
               </h1>
-              <p className="text-sm sm:text-base mb-10 sm:mb-16 font-medium w-fit text-violet-800 p-4 px-6 bg-white rounded-full border border-violet-100 shadow-lg shadow-violet-300/20">
+              <p className="text-sm sm:text-base mb-10 font-medium text-gray-600">
                 Fræðsluefni og kennsluleiðbeiningar fyrir kynfræðslu á
                 unglingastigi
               </p>

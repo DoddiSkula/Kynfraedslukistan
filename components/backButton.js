@@ -6,7 +6,7 @@ export function BackButton() {
   return (
     <button
       onClick={() => router.back()}
-      className="flex justify-center items-center bg-violet-100 text-violet-700  py-2 px-4 rounded-full hover:bg-violet-200 mb-8"
+      className="flex justify-center items-center bg-violet-100 text-violet-700 text-sm font-semibold py-2 px-4 rounded-full hover:bg-violet-200 mb-8"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@ export function BackButton() {
         viewBox="0 0 24 24"
         strokeWidth={2}
         stroke="currentColor"
-        className="w-4 h-4"
+        className="w-4 h-4 mr-1"
       >
         <path
           strokeLinecap="round"

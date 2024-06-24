@@ -28,7 +28,7 @@ export default function LinkCard({ link }) {
     return (
       <span
         className={classNames(
-          "flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md text-sm bg-opacity-90  absolute bottom-3 right-3",
+          "flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md text-sm bg-opacity-90 absolute bottom-3 right-3",
           {
             "bg-indigo-100 text-indigo-800 border": isVideo,
             "bg-purple-100 text-purple-800": !isVideo,
@@ -72,16 +72,17 @@ export default function LinkCard({ link }) {
   };
 
   return (
-    <div className=" md:mb-1 mb-10">
+    <div>
       <Link
         href={link.url}
         target={"_blank"}
         aria-label={link.title}
-        className="group relative flex flex-col min-w-80 transition-all "
+        className="group relative flex flex-col min-w-72 transition-all "
       >
         <div className="w-full relative">
+          <div className="absolute top-0 left-0 bottom-0 right-0 rounded-lg  transition-all group-hover:bg-white/20 z-10"></div>
           <CardImage
-            className="object-cover h-40 rounded-lg border border-gray-100 shadow-sm transition-all"
+            className="object-cover h-40 rounded-lg border border-gray-200 transition-all outline-violet-200 group-hover:outline-2"
             image={
               link.image?.asset?._ref
                 ? link?.image
@@ -95,12 +96,12 @@ export default function LinkCard({ link }) {
         </div>
 
         <div className="pt-3">
-          <h3 className="group-hover:underline line-clamp-2 text-lg font-bold text-gray-800">
+          <h3 className="group-hover:underline line-clamp-2 leading-tight text-base font-semibold text-gray-900">
             {link.title}
           </h3>
           <p
             className={classNames(
-              "mt-1 line-clamp-2 text-sm text-gray-500 min-w-72 overflow-hidden text-ellipsis",
+              "mt-0.5 line-clamp-2 text-xs text-gray-600 min-w-72 overflow-hidden text-ellipsis",
               {
                 "line-clamp-none": showFullDescription,
               }
@@ -114,7 +115,7 @@ export default function LinkCard({ link }) {
       {showReadMoreBtn && (
         <button
           onClick={() => setShowFullDescription((prev) => !prev)}
-          className="text-sm text-left text-violet-700 hover:text-violet-900 hover:underline"
+          className="text-xs text-left text-violet-800 hover:text-violet-900 hover:underline"
         >
           {showFullDescription ? "Minnka" : "Lesa meira"}
         </button>

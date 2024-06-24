@@ -25,27 +25,27 @@ export default function PostPage({ data = {} }) {
       {router.isFallback ? (
         <h2 className="text-2xl">Loading…</h2>
       ) : (
-        <div className="container px-6 sm:px-10 mx-auto max-w-5xl mb-20 pt-24">
+        <div className="container px-4 sm:px-10 mx-auto max-w-5xl mb-20 pt-24">
           <BackButton />
           <article>
             <Head>
               <title>{`${kennsluefni.title} | ${WEBSITE_NAME}`}</title>
             </Head>
             <div>
-              <h1 className="text-4xl sm:text-6xl font-bold mb-3 sm:mb-8 tracking-tighter leading-tight">
+              <h1 className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-4 tracking-tighter leading-tight">
                 {kennsluefni.title}
               </h1>
-              <p className="text-lg text-gray-600 leading-loose mb-8">
+              <p className="text-base text-gray-600 leading-loose mb-8">
                 {kennsluefni.description}
               </p>
-              <div className="prose text-lg text-gray-600 leading-8 mb-14">
+              <div className="prose text-base text-gray-600 leading-8 mb-14">
                 <PortableText value={kennsluefni.instructions} />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 leading-tight">
+              <h2 className="text-xl sm:text-2xl font-bold mb-6 leading-tight">
                 Fræðsluefni
               </h2>
               {kennsluefni.hlekkir?.length > 0 ? (
-                <div className="grid lg:grid-cols-3 lg:gap-8 sm:grid-cols-2 sm:gap-8 md:gap-4 mb-14">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
                   {kennsluefni.hlekkir?.map((link, index) => (
                     <LinkCard key={index} link={link} />
                   ))}
@@ -55,11 +55,11 @@ export default function PostPage({ data = {} }) {
                   Engin fræðsla tengd þessu kennsluefni.
                 </p>
               )}
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 leading-tight">
+              <h2 className="text-xl sm:text-2xl font-bold mb-6 leading-tight">
                 Verkefni
               </h2>
               {kennsluefni.verkefni?.length > 0 ? (
-                <div className="flex">
+                <div className="flex gap-4">
                   {kennsluefni.verkefni?.map((assignment, index) => (
                     <AssignmentCard key={index} assignment={assignment} />
                   ))}

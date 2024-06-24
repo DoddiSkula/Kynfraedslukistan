@@ -14,7 +14,7 @@ export default function HlekkirPage({ allLinks }) {
         <title>{`Fræðsla - ${WEBSITE_NAME}`}</title>
       </Head>
       <Container>
-        <div className="grid lg:grid-cols-4 lg:gap-8 md:grid-cols-2 md:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
           {sortedLinks?.map((link, index) => (
             <LinkCard
               key={index}

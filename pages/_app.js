@@ -1,7 +1,7 @@
 import "styles/index.css";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
-const font = Inter({
+const font = Montserrat({
   weight: ["500", "600", "700", "800"],
   subsets: ["latin"],
 });
@@ -9,9 +9,7 @@ const font = Inter({
 function MyApp({ Component, pageProps }) {
   return (
     <main className={font.className}>
-      <div className="bg-gray-50">
-        <Component {...pageProps} />
-      </div>
+      <Component {...pageProps} />
     </main>
   );
 }

@@ -7,45 +7,42 @@ export default function CourseCard({ course, colorIndex = 1 }) {
       href={`/kennsluefni/${course.slug}`}
       target={"_self"}
       aria-label={course.title}
+      className="outline-purple-600 outline-offset-2 outline-2"
     >
       <div
         className={classNames(
-          "rounded-xl  flex flex-col justify-between  p-8 h-72 bg-gradient-to-br hover:shadow-2xl hover:scale-105 transition-all text-white",
+          "rounded-xl flex flex-col justify-between h-60 p-7 transition-all duration-[400ms] bg-gradient-to-br hover:bg-gradient-to-b hover:scale-105 text-white",
           {
-            "from-blue-500 to-sky-300": [3, 5].includes(colorIndex),
-            "from-violet-500 to-purple-300": [2, 4].includes(colorIndex),
-            "from-pink-500 to-rose-300": [1, 6].includes(colorIndex),
+            "from-blue-500 to-sky-400": [3, 5].includes(colorIndex),
+            "from-violet-500 to-purple-400": [2, 4].includes(colorIndex),
+            "from-pink-500 to-rose-400": [1, 6].includes(colorIndex),
           }
         )}
       >
-        <p className="tracking-widest font-semibold text-white/80 uppercase text-sm"></p>
-        <div className="mb-3 w-[17rem]">
-          <h2 className="font-bold text-3xl tracking-wide mb-2 break-words">
+        <div>
+          <h2
+            className={classNames("font-bold text-2xl whitespace-nowrap mb-1")}
+          >
             {course.title}
           </h2>
           <p
             className={classNames(
-              "tracking-wide text-sm break-words text-ellipsis overflow-hidden line-clamp-3",
-              {
-                "text-blue-100": [3, 5].includes(colorIndex),
-                "text-purple-100": [2, 4].includes(colorIndex),
-                "text-pink-100": [1, 6].includes(colorIndex),
-              }
+              "text-sm break-words text-ellipsis overflow-hidden line-clamp-3 leading-6 mb-6 text-white/90 w-[30ch]"
             )}
           >
             {course.description}
           </p>
         </div>
-        <div className="flex gap-4 text-sm text-white/80">
+        <div className="flex items-center gap-3 text-xs text-white/80">
           {course.hlekkir?.length > 0 && (
-            <div className="flex gap-1">
+            <div className="flex items-center gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className="w-5 h-5"
+                className="w-4 h-4"
               >
                 <path
                   strokeLinecap="round"
@@ -58,14 +55,14 @@ export default function CourseCard({ course, colorIndex = 1 }) {
             </div>
           )}
           {course.verkefni?.length > 0 && (
-            <div className="flex gap-1">
+            <div className="flex items-center gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className="w-5 h-5"
+                className="w-4 h-4"
               >
                 <path
                   strokeLinecap="round"
