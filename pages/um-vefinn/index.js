@@ -24,7 +24,7 @@ export default function AboutPage() {
       <Head>
         <title>{`Um vefinn - ${WEBSITE_NAME}`}</title>
       </Head>
-      <div className="container mx-auto px-5 max-w-4xl pt-24">
+      <div className="container mx-auto px-5 max-w-3xl pt-24">
         <div className="mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 leading-tight">
             Um vefinn
@@ -34,7 +34,7 @@ export default function AboutPage() {
         <div>
           {about.map((section, index) => (
             <div key={index} className="mb-10">
-              <h2 className="text-xl sm:text-xl font-bold mb-2 text-violet-600 leading-wide">
+              <h2 className="text-xl sm:text-xl font-bold mb-2 text-violet-700 leading-wide">
                 {section.title}
               </h2>
               <p className="text-gray-600 leading-8">{section.text}</p>

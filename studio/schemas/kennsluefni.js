@@ -43,6 +43,24 @@ export const kennsluefni = {
       },
     },
     {
+      name: "learningCriteria",
+      title: "Learning criteria",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
+      name: "teachingGuide",
+      title: "Teaching guide",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
+      name: "assignmentDescription",
+      title: "Assignment description",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
       name: "instructions",
       title: "Instructions",
       type: "array",

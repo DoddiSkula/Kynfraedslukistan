@@ -15,6 +15,7 @@
     "classnames": "^2.3.2",
     "daisyui": "^2.51.5",
     "date-fns": "^2.29.3",
+    "lucide-react": "^0.399.0",
     "next": "latest",
     "next-sanity": "^4.1.2",
     "react": "^18",

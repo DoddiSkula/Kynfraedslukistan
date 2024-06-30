@@ -31,9 +31,9 @@ export default function Navbar() {
     return (
       <Link
         href={route}
-        className={`rounded-lg px-4 py-2 font-medium whitespace-nowrap  ${
+        className={`rounded-lg px-4 py-2 font-semibold whitespace-nowrap text-sm ${
           currentRoute === route
-            ? "text-violet-700 font-semibold"
+            ? "text-violet-700 font-semibold bg-violet-50"
             : "text-gray-500 hover:text-violet-700"
         }`}
         aria-current="page"
@@ -48,14 +48,14 @@ export default function Navbar() {
     <nav className="fixed top-0 sm:top-0 left-0 right-0 m-auto z-50 flex flex-col sm:items-center sm:justify-center">
       <div
         className={classNames(
-          "hidden sm:flex overflow-hidden h-16 w-full gap-2 items-center justify-center transition-all",
+          "hidden sm:flex overflow-hidden h-14 w-full gap-2 items-center justify-center transition-all border-b",
           {
-            "shadow-2xl shadow-black/10 bg-white ": scrollPosition > 10,
+            "shadow-2xl shadow-black/5 bg-white ": scrollPosition > 10,
           }
         )}
       >
         <NavItem label={"Forsíða"} route={"/"} />
-        <NavItem label={"Fræðsla"} route={"/fraedsla"} />
+        <NavItem label={"Fræðsluefni"} route={"/fraedsla"} />
         <NavItem label={"Verkefni"} route={"/verkefni"} />
         <NavItem label={"Um vefinn"} route={"/um-vefinn"} />
       </div>
