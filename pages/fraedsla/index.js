@@ -1,13 +1,14 @@
 import { linksQuery } from "lib/queries";
 import { getClient, overlayDrafts } from "lib/sanity.server";
 import Layout from "components/layout";
-import Head from "next/head";
 import { WEBSITE_NAME } from "lib/constants";
 import Container from "components/container";
 import LinkCard from "components/Cards/LinkCard";
+import Head from "next/head";
 
 export default function HlekkirPage({ allLinks }) {
   const sortedLinks = allLinks?.sort((a, b) => a.title.localeCompare(b.title));
+
   return (
     <Layout>
       <Head>

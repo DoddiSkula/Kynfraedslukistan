@@ -1,10 +1,7 @@
 import Layout from "./layout";
 import Head from "next/head";
 import { WEBSITE_NAME } from "../lib/constants";
-import Logo from "public/images/logo.svg";
-import Image from "next/image";
 import CourseCard from "./Cards/CourseCard";
-import Container from "./container";
 
 export default function Landing({ courses }) {
   return (

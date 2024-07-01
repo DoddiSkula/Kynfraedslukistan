@@ -1,5 +1,5 @@
-import Link from "next/link";
 import classNames from "classnames";
+import Link from "next/link";
 
 export default function CourseCard({ course, colorIndex = 1 }) {
   return (

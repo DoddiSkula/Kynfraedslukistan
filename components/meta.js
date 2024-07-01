@@ -36,7 +36,6 @@ export default function Meta() {
         name="description"
         content={`${WEBSITE_NAME} er tól fyrir kennara til að kenna kynfræðslu.`}
       />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} key="ogImage" />
     </Head>
   );
 }
