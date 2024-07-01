@@ -1,14 +1,17 @@
+import { cn } from "@/lib/utils";
 import "@/styles/index.css";
-import { Montserrat } from "next/font/google";
+import { Montserrat as FontSans } from "next/font/google";
 
-const font = Montserrat({
-  weight: ["500", "600", "700", "800"],
+const fontSans = FontSans({
   subsets: ["latin"],
+  variable: "--font-sans",
 });
 
 function MyApp({ Component, pageProps }) {
   return (
-    <main className={font.className}>
+    <main
+      className={cn("min-h-screen font-sans antialiased", fontSans.variable)}
+    >
       <Component {...pageProps} />
     </main>
   );

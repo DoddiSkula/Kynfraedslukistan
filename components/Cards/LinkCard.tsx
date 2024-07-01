@@ -29,17 +29,17 @@ export default function LinkCard({ link }) {
     return (
       <span
         className={classNames(
-          "flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md text-sm bg-opacity-90 absolute bottom-3 right-3",
+          "flex items-center justify-center gap-1 py-1.5 px-2 rounded-md text-xs font-semibold bg-opacity-90 absolute bottom-2 right-2",
           {
-            "bg-indigo-100 text-indigo-800 border": isVideo,
+            "bg-indigo-100 text-indigo-800": isVideo,
             "bg-purple-100 text-purple-800": !isVideo,
           }
         )}
       >
         {link.type[0] === "video" ? (
-          <Video className="size-4" />
+          <Video className="size-3.5" />
         ) : (
-          <BookOpen className="size-4" />
+          <BookOpen className="size-3.5" />
         )}
         {Math.ceil(link.duration)} mín
       </span>
