@@ -1,4 +1,4 @@
-import "styles/index.css";
+import "@/styles/index.css";
 import { Montserrat } from "next/font/google";
 
 const font = Montserrat({

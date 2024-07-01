@@ -1,8 +1,8 @@
 import Link from "next/link";
 import CardImage from "./CardImage";
 import classNames from "classnames";
-import videoFallback from "public/images/video-fallback.png";
-import articleFallback from "public/images/article-fallback.png";
+import videoFallback from "@/public/images/video-fallback.png";
+import articleFallback from "@/public/images/article-fallback.png";
 import { useEffect, useRef, useState } from "react";
 import { BookOpen, Video } from "lucide-react";
 
@@ -62,8 +62,8 @@ export default function LinkCard({ link }) {
               link.image?.asset?._ref
                 ? link?.image
                 : isVideo
-                ? videoFallback
-                : articleFallback
+                  ? videoFallback
+                  : articleFallback
             }
             alt={"img"}
           />

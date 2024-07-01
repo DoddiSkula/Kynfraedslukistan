@@ -1,8 +1,8 @@
-import { WEBSITE_NAME } from "lib/constants";
+import { WEBSITE_NAME } from "@/lib/constants";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Logo from "public/images/logo.svg";
+import Logo from "@/public/images/logo.svg";
 import Image from "next/image";
 import classNames from "classnames";
 

@@ -1,10 +1,10 @@
-import { indexQuery } from "lib/queries";
-import { getClient, overlayDrafts } from "/lib/sanity.server";
-import Layout from "components/layout";
+import { indexQuery } from "@/lib/queries";
+import { getClient, overlayDrafts } from "@//lib/sanity.server";
+import Layout from "@/components/layout";
 import Head from "next/head";
-import { WEBSITE_NAME } from "lib/constants";
-import Container from "components/container";
-import CourseCard from "components/Cards/CourseCard";
+import { WEBSITE_NAME } from "@/lib/constants";
+import Container from "@/components/container";
+import CourseCard from "@/components/Cards/CourseCard";
 
 export default function KennsluefniPage({ courses }) {
   return (

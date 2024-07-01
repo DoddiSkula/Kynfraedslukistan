@@ -1,7 +1,7 @@
-import Layout from "./layout";
 import Head from "next/head";
 import { WEBSITE_NAME } from "../lib/constants";
 import CourseCard from "./Cards/CourseCard";
+import Layout from "./layout";
 
 export default function Landing({ courses }) {
   return (

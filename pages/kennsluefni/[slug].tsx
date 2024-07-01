@@ -1,14 +1,14 @@
-import Layout from "components/layout";
-import { postQuery, postSlugsQuery } from "lib/queries";
-import { getClient, sanityClient } from "lib/sanity.server";
+import Layout from "@/components/layout";
+import { postQuery, postSlugsQuery } from "@/lib/queries";
+import { getClient, sanityClient } from "@/lib/sanity.server";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import { WEBSITE_NAME } from "lib/constants";
+import { WEBSITE_NAME } from "@/lib/constants";
 import { PortableText } from "@portabletext/react";
-import LinkCard from "components/Cards/LinkCard";
-import AssignmentCard from "components/Cards/AssignmentCard";
-import { BackButton } from "components/backButton";
+import LinkCard from "@/components/Cards/LinkCard";
+import AssignmentCard from "@/components/Cards/AssignmentCard";
+import { BackButton } from "@/components/backButton";
 import {
   ClipboardList,
   LoaderCircle,
@@ -16,7 +16,11 @@ import {
   Presentation,
 } from "lucide-react";
 
-export default function PostPage({ data = {} }) {
+type PostPageProps = {
+  data: any;
+};
+
+export default function PostPage({ data = {} }: PostPageProps) {
   const router = useRouter();
 
   const { kennsluefni } = data;
@@ -110,7 +114,7 @@ export default function PostPage({ data = {} }) {
 }
 
 export async function getStaticProps({ params }) {
-  const { kennsluefni } = await getClient().fetch(postQuery, {
+  const { kennsluefni } = await getClient(null).fetch(postQuery, {
     slug: params.slug,
   });
 

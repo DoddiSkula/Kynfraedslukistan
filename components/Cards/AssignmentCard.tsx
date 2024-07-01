@@ -1,5 +1,5 @@
-import CardImage from "components/Cards/CardImage";
 import Link from "next/link";
+import CardImage from "./CardImage";
 
 export default function AssignmentCard({ assignment }) {
   return (

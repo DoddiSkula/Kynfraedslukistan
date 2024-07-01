@@ -1,6 +1,6 @@
-import Layout from "components/layout";
+import Layout from "@/components/layout";
 import Head from "next/head";
-import { WEBSITE_NAME } from "lib/constants";
+import { WEBSITE_NAME } from "@/lib/constants";
 
 const summary = `Vefurinn er lokaverkefni Diljár Magneu Oddsdóttur til B.Ed. gráðu í grunnskólakennslu með áherslu á samfélagsgreinar við Háskóla Íslands.
  Markmið vefsins er að svara kalli unglinga eftir bættri kynfræðslu í grunnskólum. 

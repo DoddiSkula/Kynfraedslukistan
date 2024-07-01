@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { WEBSITE_NAME, HOME_OG_IMAGE_URL } from "lib/constants";
+import { WEBSITE_NAME } from "@/lib/constants";
 
 export default function Meta() {
   return (

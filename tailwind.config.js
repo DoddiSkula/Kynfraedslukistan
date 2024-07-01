@@ -1,44 +1,37 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
+  prefix: "",
   theme: {
-    extend: {
+    container: {
+      center: true,
+      padding: "2rem",
       screens: {
-        "3xl": "1920px",
+        "2xl": "1400px",
       },
-      colors: {
-        "accent-1": "#FAFAFA",
-        "accent-2": "#EAEAEA",
-        "accent-7": "#333",
-        success: "#0070f3",
-        cyan: "#79FFE1",
+    },
+    extend: {
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
       },
-      spacing: {
-        28: "7rem",
-      },
-      letterSpacing: {
-        tighter: "-.04em",
-      },
-      lineHeight: {
-        tight: 1.2,
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  daisyui: {
-    themes: [
-      {
-        mytheme: {
-          primary: "#4f46e5",
-          secondary: "#f6d860",
-          accent: "#37cdbe",
-          neutral: "#3d4451",
-          "base-100": "#ffffff",
-        },
-      },
-    ],
-  },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("tailwindcss-animate")],
 };
