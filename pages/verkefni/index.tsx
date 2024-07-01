@@ -13,7 +13,7 @@ export default function VerkefniPage({ allAssignments }) {
         <title>{`Verkefni - ${WEBSITE_NAME}`}</title>
       </Head>
       <Container>
-        <div className="mx-auto w-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mx-auto w-fit grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {allAssignments?.map((assignment, index) => (
             <AssignmentCard key={index} assignment={assignment} />
           ))}

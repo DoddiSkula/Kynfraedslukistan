@@ -1,38 +1,45 @@
 import Link from "next/link";
 import CardImage from "./CardImage";
+import { Button } from "../ui/button";
+import { ExternalLink } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 
 export default function AssignmentCard({ assignment }) {
   return (
-    <div
-      className={
-        "rounded-lg border flex flex-col min-h-96 max-w-[22rem] bg-white shadow-md text-gray-700"
-      }
-    >
-      <CardImage
-        className="object-cover h-48 rounded-t-lg border-b"
-        image={assignment.image}
-        alt={"verkefna mynd"}
-      />
-      <div className="px-5 py-4 pb-5 flex flex-col justify-between flex-1">
-        <div className="flex-1 overflow-hidden">
-          <h2 className="text-xl font-bold mb-2">{assignment.title}</h2>
-          <p
-            className={
-              "text-sm line-clamp-3 mb-5 leading-relaxed text-gray-500"
-            }
-          >
-            {assignment.description}
-          </p>
-        </div>
+    <Card className="max-w-[350px] border-purple-200 bg-purple-50 flex flex-col">
+      <CardHeader>
+        <CardImage
+          className="object-cover border rounded-md max-h-[200px] w-full"
+          image={assignment.image}
+          alt={"verkefna mynd"}
+        />
+      </CardHeader>
+      <CardContent className="mb-2">
+        <CardTitle>{assignment.title}</CardTitle>
+        <CardDescription className="line-clamp-4">
+          {assignment.description}
+        </CardDescription>
+      </CardContent>
+      <CardFooter className="flex-1 flex flex-col justify-end">
         <Link
           href={assignment.url}
           target={"_blank"}
           aria-label={assignment.title}
-          className="bg-violet-100 w-fit mt-2 text-violet-800 py-3 px-4 rounded-md hover:shadow-sm hover:bg-violet-200"
+          className="w-full"
         >
-          Skoða verkefni
+          <Button variant="secondary" className="w-full">
+            Skoða verkefni
+            <ExternalLink className="ml-2 size-3.5" />
+          </Button>
         </Link>
-      </div>
-    </div>
+      </CardFooter>
+    </Card>
   );
 }

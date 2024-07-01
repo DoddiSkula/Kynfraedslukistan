@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Logo from "@/public/images/logo.svg";
 import Image from "next/image";
 import classNames from "classnames";
+import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const router = useRouter();
@@ -15,7 +17,7 @@ export default function Navbar() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
-    const position = window.pageYOffset;
+    const position = window.scrollY;
     setScrollPosition(position);
   };
 
@@ -28,18 +30,20 @@ export default function Navbar() {
   }, []);
 
   const NavItem = ({ label, route }) => {
+    const isSelected = currentRoute === route;
+
     return (
       <Link
         href={route}
-        className={`rounded-lg px-4 py-2 font-semibold whitespace-nowrap text-sm ${
-          currentRoute === route
-            ? "text-violet-700 font-semibold bg-violet-50"
-            : "text-gray-500 hover:text-violet-700"
-        }`}
         aria-current="page"
         onClick={() => setDrawerOpen(false)}
       >
-        {label}
+        <Button
+          variant={isSelected ? "secondary" : "ghost"}
+          className={cn({ "text-zinc-500 hover:text-purple-800": !isSelected })}
+        >
+          {label}
+        </Button>
       </Link>
     );
   };
