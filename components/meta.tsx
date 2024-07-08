@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { WEBSITE_NAME, HOME_OG_IMAGE_URL } from "lib/constants";
+import { WEBSITE_NAME } from "@/lib/constants";
 
 export default function Meta() {
   return (
@@ -34,7 +34,7 @@ export default function Meta() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`${WEBSITE_NAME} er tól fyrir kennara til að kenna kynfræðslu.`}
+        content={`${WEBSITE_NAME} er tól fyrir kennara við að kenna kynfræðslu.`}
       />
     </Head>
   );

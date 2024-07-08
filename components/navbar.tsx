@@ -1,10 +1,13 @@
-import { WEBSITE_NAME } from "lib/constants";
+import { WEBSITE_NAME } from "@/lib/constants";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Logo from "public/images/logo.svg";
+import Logo from "@/public/images/logo.svg";
 import Image from "next/image";
 import classNames from "classnames";
+import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
+import { HomeIcon } from "lucide-react";
 
 export default function Navbar() {
   const router = useRouter();
@@ -15,7 +18,7 @@ export default function Navbar() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
-    const position = window.pageYOffset;
+    const position = window.scrollY;
     setScrollPosition(position);
   };
 
@@ -28,18 +31,21 @@ export default function Navbar() {
   }, []);
 
   const NavItem = ({ label, route }) => {
+    const isSelected = currentRoute === route;
+
     return (
       <Link
         href={route}
-        className={`rounded-lg px-4 py-2 font-semibold whitespace-nowrap text-sm ${
-          currentRoute === route
-            ? "text-violet-700 font-semibold bg-violet-50"
-            : "text-gray-500 hover:text-violet-700"
-        }`}
         aria-current="page"
         onClick={() => setDrawerOpen(false)}
+        className="flex items-center"
       >
-        {label}
+        <Button
+          variant={"nav"}
+          className={cn({ "text-purple-700": isSelected })}
+        >
+          {label}
+        </Button>
       </Link>
     );
   };
@@ -47,12 +53,9 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 sm:top-0 left-0 right-0 m-auto z-50 flex flex-col sm:items-center sm:justify-center">
       <div
-        className={classNames(
-          "hidden sm:flex overflow-hidden h-14 w-full gap-2 items-center justify-center transition-all border-b",
-          {
-            "shadow-2xl shadow-black/5 bg-white ": scrollPosition > 10,
-          }
-        )}
+        className={
+          "hidden sm:flex overflow-hidden h-14 w-full gap-2 items-center justify-center transition-all border-b bg-white"
+        }
       >
         <NavItem label={"Forsíða"} route={"/"} />
         <NavItem label={"Fræðsluefni"} route={"/fraedsla"} />

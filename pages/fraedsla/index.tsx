@@ -1,10 +1,10 @@
-import { linksQuery } from "lib/queries";
-import { getClient, overlayDrafts } from "lib/sanity.server";
-import Layout from "components/layout";
-import { WEBSITE_NAME } from "lib/constants";
-import Container from "components/container";
-import LinkCard from "components/Cards/LinkCard";
+import { linksQuery } from "@/lib/queries";
+import { getClient, overlayDrafts } from "@/lib/sanity.server";
+import { WEBSITE_NAME } from "@/lib/constants";
+import Container from "@/components/container";
+import LinkCard from "@/components/Cards/LinkCard";
 import Head from "next/head";
+import Layout from "@/components/layout";
 
 export default function HlekkirPage({ allLinks }) {
   const sortedLinks = allLinks?.sort((a, b) => a.title.localeCompare(b.title));
@@ -17,15 +17,7 @@ export default function HlekkirPage({ allLinks }) {
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
           {sortedLinks?.map((link, index) => (
-            <LinkCard
-              key={index}
-              link={link}
-              title={link.title}
-              slug={link.url}
-              desc={link.description}
-              image={link.image}
-              type={"hlekkur"}
-            />
+            <LinkCard key={index} link={link} />
           ))}
         </div>
       </Container>

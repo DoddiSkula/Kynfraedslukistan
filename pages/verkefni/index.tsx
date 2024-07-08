@@ -1,10 +1,10 @@
-import { assignmentsQuery } from "lib/queries";
-import { getClient, overlayDrafts } from "lib/sanity.server";
-import Layout from "components/layout";
+import { assignmentsQuery } from "@/lib/queries";
+import { getClient, overlayDrafts } from "@/lib/sanity.server";
+import Layout from "@/components/layout";
 import Head from "next/head";
-import { WEBSITE_NAME } from "lib/constants";
-import Container from "/components/container";
-import AssignmentCard from "components/Cards/AssignmentCard";
+import { WEBSITE_NAME } from "@/lib/constants";
+import Container from "@/components/container";
+import AssignmentCard from "@/components/Cards/AssignmentCard";
 
 export default function VerkefniPage({ allAssignments }) {
   return (
@@ -13,7 +13,7 @@ export default function VerkefniPage({ allAssignments }) {
         <title>{`Verkefni - ${WEBSITE_NAME}`}</title>
       </Head>
       <Container>
-        <div className="mx-auto w-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mx-auto w-fit grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {allAssignments?.map((assignment, index) => (
             <AssignmentCard key={index} assignment={assignment} />
           ))}

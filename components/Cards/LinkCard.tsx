@@ -1,8 +1,8 @@
 import Link from "next/link";
 import CardImage from "./CardImage";
 import classNames from "classnames";
-import videoFallback from "public/images/video-fallback.png";
-import articleFallback from "public/images/article-fallback.png";
+import videoFallback from "@/public/images/video-fallback.png";
+import articleFallback from "@/public/images/article-fallback.png";
 import { useEffect, useRef, useState } from "react";
 import { BookOpen, Video } from "lucide-react";
 
@@ -29,17 +29,17 @@ export default function LinkCard({ link }) {
     return (
       <span
         className={classNames(
-          "flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md text-sm bg-opacity-90 absolute bottom-3 right-3",
+          "flex items-center justify-center gap-1 py-1.5 px-2 rounded-md text-xs font-semibold bg-opacity-90 absolute bottom-2 right-2",
           {
-            "bg-indigo-100 text-indigo-800 border": isVideo,
+            "bg-indigo-100 text-indigo-800": isVideo,
             "bg-purple-100 text-purple-800": !isVideo,
           }
         )}
       >
         {link.type[0] === "video" ? (
-          <Video className="size-4" />
+          <Video className="size-3.5" />
         ) : (
-          <BookOpen className="size-4" />
+          <BookOpen className="size-3.5" />
         )}
         {Math.ceil(link.duration)} mín
       </span>
@@ -62,8 +62,8 @@ export default function LinkCard({ link }) {
               link.image?.asset?._ref
                 ? link?.image
                 : isVideo
-                ? videoFallback
-                : articleFallback
+                  ? videoFallback
+                  : articleFallback
             }
             alt={"img"}
           />

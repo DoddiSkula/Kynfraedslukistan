@@ -1,22 +1,28 @@
-import Layout from "components/layout";
-import { postQuery, postSlugsQuery } from "lib/queries";
-import { getClient, sanityClient } from "lib/sanity.server";
+import Layout from "@/components/layout";
+import { postQuery, postSlugsQuery } from "@/lib/queries";
+import { getClient, sanityClient } from "@/lib/sanity.server";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import { WEBSITE_NAME } from "lib/constants";
+import { WEBSITE_NAME } from "@/lib/constants";
 import { PortableText } from "@portabletext/react";
-import LinkCard from "components/Cards/LinkCard";
-import AssignmentCard from "components/Cards/AssignmentCard";
-import { BackButton } from "components/backButton";
+import LinkCard from "@/components/Cards/LinkCard";
+import AssignmentCard from "@/components/Cards/AssignmentCard";
 import {
+  ArrowLeft,
+  ChevronLeft,
   ClipboardList,
   LoaderCircle,
   NotebookPen,
   Presentation,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-export default function PostPage({ data = {} }) {
+type PostPageProps = {
+  data: any;
+};
+
+export default function PostPage({ data = {} }: PostPageProps) {
   const router = useRouter();
 
   const { kennsluefni } = data;
@@ -37,22 +43,31 @@ export default function PostPage({ data = {} }) {
           <h2 className="font-medium text-gray-600">Hleður síðu...</h2>
         </div>
       ) : (
-        <div className="container px-4 sm:px-10 mx-auto max-w-6xl mb-20 pt-24">
-          <BackButton />
+        <div className="container px-4 sm:px-10 mx-auto max-w-6xl mb-20 pt-24 font-medium">
           <article>
             <Head>
               <title>{`${kennsluefni.title} | ${WEBSITE_NAME}`}</title>
             </Head>
             <div className="space-y-14">
               <div>
-                <h1 className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-3 tracking-tighter leading-tight">
-                  {kennsluefni.title}
-                </h1>
+                <div className="flex items-center gap-5 mb-2 sm:mb-4">
+                  <Button
+                    onClick={() => router.back()}
+                    variant="secondary"
+                    size="icon"
+                    className="size-9"
+                  >
+                    <ArrowLeft className="size-5" />
+                  </Button>
+                  <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter leading-tight">
+                    {kennsluefni.title}
+                  </h1>
+                </div>
                 <p className="text-base text-gray-600 leading-9 max-w-3xl">
                   {kennsluefni.description}
                 </p>
               </div>
-              <div className="bg-indigo-100/60 p-6 rounded-xl w-fit prose leading-8 max-w-3xl">
+              <div className="bg-indigo-100/60 p-6 rounded-xl w-fit prose leading-8 max-w-3xl text-indigo-900">
                 <h3 className="text-xl font-bold text-indigo-500 flex items-center">
                   <ClipboardList className="mr-2" />
                   Hæfniviðmið
@@ -64,13 +79,13 @@ export default function PostPage({ data = {} }) {
                 <PortableText value={kennsluefni.teachingGuide} />
               </div>
 
-              <div>
+              <div className="max-w-3xl">
                 <h3 className="text-2xl font-bold mb-6 flex items-center w-full">
                   <Presentation className="mr-2" />
                   Fræðsluefni
                 </h3>
                 {kennsluefni.hlekkir?.length > 0 ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {kennsluefni.hlekkir?.map((link, index) => (
                       <LinkCard key={index} link={link} />
                     ))}
@@ -110,7 +125,7 @@ export default function PostPage({ data = {} }) {
 }
 
 export async function getStaticProps({ params }) {
-  const { kennsluefni } = await getClient().fetch(postQuery, {
+  const { kennsluefni } = await getClient(null).fetch(postQuery, {
     slug: params.slug,
   });
 

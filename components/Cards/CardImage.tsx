@@ -3,7 +3,7 @@ import { urlForImage } from "lib/sanity";
 
 export default function CardImage({
   image: source,
-  priority,
+  priority = true,
   alt,
   className = "",
 }) {

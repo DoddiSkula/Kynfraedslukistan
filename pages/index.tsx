@@ -1,6 +1,6 @@
-import Landing from "components/landing";
-import { indexQuery } from "lib/queries";
-import { getClient, overlayDrafts } from "/lib/sanity.server";
+import Landing from "@/components/landing";
+import { indexQuery } from "@/lib/queries";
+import { getClient, overlayDrafts } from "@/lib/sanity.server";
 
 export default function IndexPage({ courses }) {
   return <Landing courses={courses} />;
