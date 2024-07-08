@@ -7,6 +7,7 @@ import Image from "next/image";
 import classNames from "classnames";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
+import { HomeIcon } from "lucide-react";
 
 export default function Navbar() {
   const router = useRouter();
@@ -37,10 +38,11 @@ export default function Navbar() {
         href={route}
         aria-current="page"
         onClick={() => setDrawerOpen(false)}
+        className="flex items-center"
       >
         <Button
-          variant={isSelected ? "secondary" : "ghost"}
-          className={cn({ "text-zinc-500 hover:text-purple-800": !isSelected })}
+          variant={"nav"}
+          className={cn({ "text-purple-700": isSelected })}
         >
           {label}
         </Button>
@@ -51,12 +53,9 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 sm:top-0 left-0 right-0 m-auto z-50 flex flex-col sm:items-center sm:justify-center">
       <div
-        className={classNames(
-          "hidden sm:flex overflow-hidden h-14 w-full gap-2 items-center justify-center transition-all border-b",
-          {
-            "shadow-2xl shadow-black/5 bg-white ": scrollPosition > 10,
-          }
-        )}
+        className={
+          "hidden sm:flex overflow-hidden h-14 w-full gap-2 items-center justify-center transition-all border-b bg-white"
+        }
       >
         <NavItem label={"Forsíða"} route={"/"} />
         <NavItem label={"Fræðsluefni"} route={"/fraedsla"} />

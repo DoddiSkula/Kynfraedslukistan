@@ -43,7 +43,7 @@ export default function PostPage({ data = {} }: PostPageProps) {
           <h2 className="font-medium text-gray-600">Hleður síðu...</h2>
         </div>
       ) : (
-        <div className="container px-4 sm:px-10 mx-auto max-w-6xl mb-20 pt-24">
+        <div className="container px-4 sm:px-10 mx-auto max-w-6xl mb-20 pt-24 font-medium">
           <article>
             <Head>
               <title>{`${kennsluefni.title} | ${WEBSITE_NAME}`}</title>

@@ -1,79 +1,62 @@
-import classNames from "classnames";
+import {
+  BedDoubleIcon,
+  Clapperboard,
+  HeartCrackIcon,
+  HeartHandshakeIcon,
+  HeartIcon,
+  MessageCircleMoreIcon,
+  ThumbsUpIcon,
+} from "lucide-react";
 import Link from "next/link";
 
-export default function CourseCard({ course, colorIndex = 1 }) {
+const iconMap = {
+  sambond: (
+    <div className="size-11 rounded-full bg-blue-100 flex items-center justify-center">
+      <HeartHandshakeIcon className="size-5 text-blue-700" />
+    </div>
+  ),
+  ofbeldi: (
+    <div className="size-11 rounded-full bg-pink-100 flex items-center justify-center">
+      <HeartCrackIcon className="size-5 text-pink-700" />
+    </div>
+  ),
+  samthykki: (
+    <div className="size-11 rounded-full bg-teal-100 flex items-center justify-center">
+      <ThumbsUpIcon className="size-5 text-teal-700" />
+    </div>
+  ),
+  kynlif: (
+    <div className="size-11 rounded-full bg-fuchsia-100 flex items-center justify-center">
+      <BedDoubleIcon className="size-5 text-fuchsia-700" />
+    </div>
+  ),
+  samskipti: (
+    <div className="size-11 rounded-full bg-orange-100 flex items-center justify-center">
+      <MessageCircleMoreIcon className="size-5 text-orange-700" />
+    </div>
+  ),
+  "klam-og-raunveruleiki": (
+    <div className="size-11 rounded-full bg-sky-100 flex items-center justify-center">
+      <Clapperboard className="size-5 text-sky-700" />
+    </div>
+  ),
+};
+
+export default function CourseCard({ course }) {
   return (
     <Link
       href={`/kennsluefni/${course.slug}`}
       target={"_self"}
       aria-label={course.title}
-      className="outline-purple-600 outline-offset-2 outline-2"
+      className={
+        "rounded-xl flex items-center gap-6 hover:outline outline-1 border  shadow-purple-800/5 outline-purple-400 bg-white border-purple-100 p-6 transition-all"
+      }
     >
-      <div
-        className={classNames(
-          "rounded-xl flex flex-col justify-between h-60 p-7 transition-all duration-[400ms] bg-gradient-to-br hover:bg-gradient-to-b hover:scale-105 text-white",
-          {
-            "from-blue-500 to-sky-400": [3, 5].includes(colorIndex),
-            "from-violet-500 to-purple-400": [2, 4].includes(colorIndex),
-            "from-pink-500 to-rose-400": [1, 6].includes(colorIndex),
-          }
-        )}
-      >
-        <div>
-          <h2
-            className={classNames("font-bold text-2xl whitespace-nowrap mb-1")}
-          >
-            {course.title}
-          </h2>
-          <p
-            className={classNames(
-              "text-sm break-words text-ellipsis overflow-hidden line-clamp-3 leading-6 mb-6 text-white/90 w-[30ch]"
-            )}
-          >
-            {course.description}
-          </p>
-        </div>
-        <div className="flex items-center gap-3 text-xs text-white/80">
-          {course.hlekkir?.length > 0 && (
-            <div className="flex items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
-                />
-              </svg>
-
-              {course.hlekkir?.length}
-            </div>
-          )}
-          {course.verkefni?.length > 0 && (
-            <div className="flex items-center gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
-                />
-              </svg>
-              {course.verkefni?.length}
-            </div>
-          )}
-        </div>
+      {iconMap[course.slug]}
+      <div>
+        <h2 className={"font-semibold text-lg whitespace-nowrap"}>
+          {course.title}
+        </h2>
       </div>
     </Link>
   );

@@ -13,7 +13,7 @@ import {
 
 export default function AssignmentCard({ assignment }) {
   return (
-    <Card className="max-w-[350px] border-purple-200 bg-purple-50 flex flex-col">
+    <Card className="max-w-[350px] flex flex-col">
       <CardHeader>
         <CardImage
           className="object-cover border rounded-md max-h-[200px] w-full"

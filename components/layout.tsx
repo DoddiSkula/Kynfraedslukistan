@@ -4,10 +4,10 @@ import Navbar from "./navbar";
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className="bg-[#FDFCFF]">
       <Meta />
       <Navbar />
-      <div>{children}</div>
+      <div className="min-h-screen font-medium">{children}</div>
       <Footer />
     </div>
   );
